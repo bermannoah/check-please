@@ -9,7 +9,6 @@ describe "user visits items page"  do
   it "user sees all item names" do
 
     visit items_path
-    save_and_open_page
 
     expect(page).to have_content(@item_1.name)
     expect(page).to have_content(@item_2.name)

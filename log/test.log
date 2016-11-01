@@ -3860,3 +3860,1374 @@ Completed 200 OK in 215ms (Views: 212.8ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (17.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 53], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 18:52:08 UTC], ["updated_at", 2016-11-01 18:52:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 12:52:08 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 513ms (Views: 510.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 12:52:09 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 12:52:09 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$otATdmcefHEeumBCuQMMB.Y/cP4YTwXnJ73JG14Y71/NYPUzbBmtS"], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 18:52:09 UTC], ["updated_at", 2016-11-01 18:52:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 58], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:01:50 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (2.2ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 314ms (Views: 311.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:01:50 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (5.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:01:50 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (12.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$PITrZbD2W/yI/3jAsVQQz.e4DWbI1fCxIyW/g3hV0ycnJGHOSlZ0W"], ["created_at", 2016-11-01 19:01:50 UTC], ["updated_at", 2016-11-01 19:01:50 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (11.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (14.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:01:51 UTC], ["updated_at", 2016-11-01 19:01:51 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (8.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 63], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:05:02 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 266ms (Views: 263.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:05:02 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:05:02 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$6RkWESP2EcKFarPTCf.qJ.FBYJire6afcaB3KnX/HPeIO5laA6T7m"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:05:02 UTC], ["updated_at", 2016-11-01 19:05:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 68], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:06:06 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 361ms (Views: 357.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 3"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["category_id", 72], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:06:06 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (0.3ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.6ms)
+Started GET "/categories/72" for 127.0.0.1 at 2016-11-01 13:06:06 -0600
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:06:06 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 9"], ["price", 9.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:06:06 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:06:06 UTC], ["updated_at", 2016-11-01 19:06:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$N6ny/yZMJK/d1pwLm8dhz.D6JJXzD.4ua33pNw9xgClhHr7CBUnXC"], ["created_at", 2016-11-01 19:06:07 UTC], ["updated_at", 2016-11-01 19:06:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:06:07 UTC], ["updated_at", 2016-11-01 19:06:07 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:25:53 UTC], ["updated_at", 2016-11-01 19:25:53 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 74], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:53:16 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 271ms (Views: 269.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 3"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["category_id", 78], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:53:16 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 1.1ms)
+Started GET "/category%20name%203" for 127.0.0.1 at 2016-11-01 13:53:16 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"category name 3"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 88ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:53:16 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"items"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "items"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 9"], ["price", 9.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:53:16 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"items"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "items"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$9Os4x.brT9UqZSamIORYi.I9OYfqkB2tBX8KrnxYUNVW3wnXDvNbi"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:53:16 UTC], ["updated_at", 2016-11-01 19:53:16 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 80], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:54:09 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 286ms (Views: 284.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 3"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["category_id", 84], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:54:09 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+Started GET "/category%20name%203" for 127.0.0.1 at 2016-11-01 13:54:09 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"category name 3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 96ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:54:09 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"items"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "items"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 9"], ["price", 9.0], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:54:09 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"items"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "items"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:54:09 UTC], ["updated_at", 2016-11-01 19:54:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:54:10 UTC], ["updated_at", 2016-11-01 19:54:10 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$xNpDZZ5lFiL9lY96.IuOUeNgo55UR3pOKiC/2WutQPThEzZ8Vi5Dm"], ["created_at", 2016-11-01 19:54:10 UTC], ["updated_at", 2016-11-01 19:54:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:54:10 UTC], ["updated_at", 2016-11-01 19:54:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 86], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:58:55 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 330ms (Views: 326.8ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 3"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["category_id", 90], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:58:55 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+Started GET "/category%20name%203" for 127.0.0.1 at 2016-11-01 13:58:55 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"category name 3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:58:55 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 9"], ["price", 9.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:58:55 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$RmYs/kuUlfoIEEye4b.b1OPCWzdlyYwPGu.vIuwBD2AfixaolXeP."], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:58:55 UTC], ["updated_at", 2016-11-01 19:58:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 1"], ["price", 1.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 1"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 2"], ["price", 2.0], ["category_id", 92], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 2"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "appetizers"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "appetizers"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "beverages"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "beverages"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:59:52 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 247ms (Views: 244.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "category name 3"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "item name 3"], ["price", 3.0], ["category_id", 96], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/menu" for 127.0.0.1 at 2016-11-01 13:59:52 -0600
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (0.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+Started GET "/category%20name%203" for 127.0.0.1 at 2016-11-01 13:59:52 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"category name 3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "category name 3"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 4"], ["price", 4.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 5"], ["price", 5.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 6"], ["price", 6.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:59:52 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 7"], ["price", 7.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 8"], ["price", 8.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "item name 9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "item name 9"], ["price", 9.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/items" for 127.0.0.1 at 2016-11-01 13:59:52 -0600
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test"], ["price", 100.0], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "servers" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["username", "test"], ["password_digest", "$2a$04$NAoDgrkOq6CII3V/83TXaugZv84dB/rm/NNRB1FBYUK5rIQnW/Px2"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mServer Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tables" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "1"], ["created_at", 2016-11-01 19:59:52 UTC], ["updated_at", 2016-11-01 19:59:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTable Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTable Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tables" WHERE "tables"."location" = $1 LIMIT $2[0m  [["location", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
