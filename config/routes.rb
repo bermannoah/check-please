@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
+
   get "/menu"  => "categories#index"
   resources :servers
 

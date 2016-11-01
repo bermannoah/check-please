@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 ruby '2.3.1'
-gem 'binding_of_caller'
-gem 'shoulda-matchers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -37,8 +35,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'better_errors'
-  gem 'rack_session_access'
+  gem 'binding_of_caller' #noahs
+  gem 'shoulda-matchers' #noahs
+  # gem 'rack_session_access'
 
   gem 'byebug', platform: :mri
 end
