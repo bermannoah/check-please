@@ -2,27 +2,23 @@ require 'rails_helper'
 
 describe "server creates a new account" do
 
-  let(:server)  {create(:server)}
+  @server = Server.new(name: "Jeff", username: "j3", password: "321clap")
 
-  scenario "the server sees the login button" do
-    visit root_path
+  scenario "server goes to the login page" do
+    visit login_path
 
-    expect(page).to have_content("Login")
-  end
+    click_on "Create Account"
 
-  scenario "the server is taken to the login page" do
-    visit root_path
-    click_on "Login"
+    fill_in "server[name]", with @server.name
+    fill_in "server[username]", with @server.username
+    fill_in "server[password]", with @server.password
+    fill_in "server[password_confirmation]", with @server.password
+    click_on "Create"
 
-    expect(path).to eq("/login")
-  end
-
-  scenario "server sees the form to login" do
-    visit root_path
-    click_on "Login"
-
-    expect(page.has_field?("username", type: text_area)).to eq(true)
-    expect(page.has_field?("password", type: password)).to eq(true)
-    expect(page).to have_link("Create Account")
+    expect(current_path).to eq(/dashboard)
+    expect(page).to have_content("Logged in as #{@server.username}")
+    expect(page).to have_content("Name: #{@server.name}")
+    expect(page).to_not have_content("Login")
+    expect(page).to have_content("Logout")
   end
 end
