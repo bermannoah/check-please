@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031231835) do
+ActiveRecord::Schema.define(version: 20161101001651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "servers", force: :cascade do |t|
     t.string   "name"
@@ -23,4 +29,13 @@ ActiveRecord::Schema.define(version: 20161031231835) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.string   "location"
+    t.integer  "server_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["server_id"], name: "index_tables_on_server_id", using: :btree
+  end
+
+  add_foreign_key "tables", "servers"
 end
