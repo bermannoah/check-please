@@ -26,11 +26,11 @@ RSpec.describe Category, type: :model do
     end
   end
 
-  # describe "relationships" do
-  #   it "belongs to a server" do
-  #     category = Category.new(name: "test")
-  #
-  #     expect(category).to respond_to(:server)
-  #   end
-  # end
+  describe "relationships" do
+    it "has many items" do
+      category = Category.new(name: "test")
+
+      expect(category).to respond_to(:items)
+    end
+  end
 end

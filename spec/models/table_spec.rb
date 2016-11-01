@@ -32,5 +32,11 @@ RSpec.describe Table, type: :model do
 
       expect(table).to respond_to(:server)
     end
+
+    it "has many items" do
+      table = Table.new(location: "1")
+
+      expect(table).to respond_to(:table_items)
+    end
   end
 end

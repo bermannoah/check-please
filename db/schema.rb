@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101001651) do
+ActiveRecord::Schema.define(version: 20161101003141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,30 @@ ActiveRecord::Schema.define(version: 20161101001651) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+  end
+
   create_table "servers", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "table_items", force: :cascade do |t|
+    t.integer  "table_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_table_items_on_item_id", using: :btree
+    t.index ["table_id"], name: "index_table_items_on_table_id", using: :btree
   end
 
   create_table "tables", force: :cascade do |t|
@@ -37,5 +55,8 @@ ActiveRecord::Schema.define(version: 20161101001651) do
     t.index ["server_id"], name: "index_tables_on_server_id", using: :btree
   end
 
+  add_foreign_key "items", "categories"
+  add_foreign_key "table_items", "items"
+  add_foreign_key "table_items", "tables"
   add_foreign_key "tables", "servers"
 end
