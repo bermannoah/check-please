@@ -7,6 +7,7 @@ RSpec.feature "user see categories across the top " do
 
     visit menu_path
 
+
     expect(page).to have_content(category_one.name)
     expect(page).to have_content(category_two.name)
 

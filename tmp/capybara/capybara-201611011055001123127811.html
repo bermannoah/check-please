@@ -1,0 +1,124 @@
+ActionController::RoutingError at /menu
+=======================================
+
+> uninitialized constant CategoriesController
+
+spec/features/User_can_see_categories_spec.rb, line 8
+-----------------------------------------------------
+
+``` ruby
+    3   RSpec.feature "user see categories across the top " do
+    4     it "displays two categories across the top" do
+    5       category_one = Category.create(name:"appitizers")
+    6       category_two = Category.create(name:"beverages")
+    7   
+>   8       visit menu_path
+    9       
+   10       save_and_open_page
+   11   
+   12       expect(page).to have_content(category_one.name)
+   13       expect(page).to have_content(category_two.name)
+```
+
+App backtrace
+-------------
+
+ - spec/features/User_can_see_categories_spec.rb:8:in `block (2 levels) in <top (required)>'
+
+Full backtrace
+--------------
+
+ - activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
+ - activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+ - activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+ - activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+ - activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+ - actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+ - actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+ - actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+ - actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+ - actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+ - actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+ - actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+ - rack (2.0.1) lib/rack/etag.rb:25:in `call'
+ - rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+ - rack (2.0.1) lib/rack/head.rb:12:in `call'
+ - rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+ - rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+ - activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+ - activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+ - activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+ - better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+ - better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+ - better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+ - railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+ - railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+ - activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+ - activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+ - activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+ - railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+ - rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+ - rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+ - activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+ - actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+ - rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+ - railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+ - rack (2.0.1) lib/rack/urlmap.rb:68:in `block in call'
+ - rack (2.0.1) lib/rack/urlmap.rb:53:in `each'
+ - rack (2.0.1) lib/rack/urlmap.rb:53:in `call'
+ - rack-test (0.6.3) lib/rack/mock_session.rb:30:in `request'
+ - rack-test (0.6.3) lib/rack/test.rb:244:in `process_request'
+ - rack-test (0.6.3) lib/rack/test.rb:58:in `get'
+ - /usr/local/Cellar/ruby/2.3.1/lib/ruby/2.3.0/forwardable.rb:189:in `get'
+ - capybara (2.10.1) lib/capybara/rack_test/browser.rb:61:in `process'
+ - capybara (2.10.1) lib/capybara/rack_test/browser.rb:36:in `process_and_follow_redirects'
+ - capybara (2.10.1) lib/capybara/rack_test/browser.rb:22:in `visit'
+ - capybara (2.10.1) lib/capybara/rack_test/driver.rb:43:in `visit'
+ - capybara (2.10.1) lib/capybara/session.rb:240:in `visit'
+ - capybara (2.10.1) lib/capybara/dsl.rb:52:in `block (2 levels) in <module:DSL>'
+ - rspec-rails (3.5.2) lib/rspec/rails/example/feature_example_group.rb:29:in `visit'
+ - spec/features/User_can_see_categories_spec.rb:8:in `block (2 levels) in <top (required)>'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:254:in `instance_exec'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:254:in `block in run'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:496:in `block in with_around_and_singleton_context_hooks'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:453:in `block in with_around_example_hooks'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:464:in `block in run'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:604:in `block in run_around_example_hooks_for'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:338:in `call'
+ - rspec-rails (3.5.2) lib/rspec/rails/adapters.rb:127:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:443:in `instance_exec'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:443:in `instance_exec'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:375:in `execute_with'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:606:in `block (2 levels) in run_around_example_hooks_for'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:338:in `call'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:607:in `run_around_example_hooks_for'
+ - rspec-core (3.5.4) lib/rspec/core/hooks.rb:464:in `run'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:453:in `with_around_example_hooks'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:496:in `with_around_and_singleton_context_hooks'
+ - rspec-core (3.5.4) lib/rspec/core/example.rb:251:in `run'
+ - rspec-core (3.5.4) lib/rspec/core/example_group.rb:627:in `block in run_examples'
+ - rspec-core (3.5.4) lib/rspec/core/example_group.rb:623:in `map'
+ - rspec-core (3.5.4) lib/rspec/core/example_group.rb:623:in `run_examples'
+ - rspec-core (3.5.4) lib/rspec/core/example_group.rb:589:in `run'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:113:in `block (3 levels) in run_specs'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:113:in `map'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:113:in `block (2 levels) in run_specs'
+ - rspec-core (3.5.4) lib/rspec/core/configuration.rb:1835:in `with_suite_hooks'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:112:in `block in run_specs'
+ - rspec-core (3.5.4) lib/rspec/core/reporter.rb:77:in `report'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:111:in `run_specs'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:87:in `run'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:71:in `run'
+ - rspec-core (3.5.4) lib/rspec/core/runner.rb:45:in `invoke'
+ - rspec-core (3.5.4) exe/rspec:4:in `<top (required)>'
+ - /usr/local/bin/rspec:23:in `load'
+ - /usr/local/bin/rspec:23:in `<main>'
+
