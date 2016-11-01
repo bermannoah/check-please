@@ -9,8 +9,12 @@
     <%= javascript_include_tag 'application' %>
 
   </head>
-
   <body>
+
+    <% flash.each do |type, message| %>
+      <%= content_tag :div, message %>
+    <% end %>
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  post '/orders' => 'orders#create', as: "orders"
 
   resources :items, only: [:index]
-  get "/menu"  => "categories#index"
+  resources :orders, only: [:show]
+  resources :servers
+
+
+  get "/menu"  => "categories#index", as: "menu"
   root "categories#index"
 
-  resources :servers
   get "/:category_name" => "categories#show", as: "category_name"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
