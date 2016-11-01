@@ -4,7 +4,7 @@ class CreateTableItems < ActiveRecord::Migration[5.0]
       t.references :table, foreign_key: true
       t.references :item, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
