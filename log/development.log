@@ -1564,3 +1564,36 @@ app/controllers/categories_controller.rb:9:in `show'
   Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.2ms)
   Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (360.4ms)
+Started GET "/Beverages" for ::1 at 2016-11-01 14:03:05 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"Beverages"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Beverages"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (36.2ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 1114ms (Views: 939.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/Appetizers" for ::1 at 2016-11-01 14:03:09 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"Appetizers"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Appetizers"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (15.4ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 951ms (Views: 925.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/Appetizers" for ::1 at 2016-11-01 14:03:21 -0600
+Processing by CategoriesController#show as HTML
+  Parameters: {"category_name"=>"Appetizers"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Appetizers"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (16.6ms)
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 988ms (Views: 951.7ms | ActiveRecord: 2.4ms)
+
+
