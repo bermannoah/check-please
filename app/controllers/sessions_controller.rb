@@ -11,9 +11,11 @@ class SessionsController < ApplicationController
         session[:server_id] = @server.id
         redirect_to dashboard_path
       else
+        flash[:failure] = "Password incorrect!"
         render :new
       end
     else
+      flash[:failure] = "Username incorrect!"
       render :new
     end
   end
@@ -23,5 +25,4 @@ class SessionsController < ApplicationController
     flash[:success] = "Successfully logged out!"
     redirect_to login_path
   end
-
 end

@@ -28,7 +28,7 @@ describe "server logs in" do
 
 
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("Logged in as #{server.usernmae}")
+    expect(page).to have_content("Logged in as #{server.username}")
   end
 
   scenario "server sees the form to login and enters wrong password" do
@@ -39,7 +39,7 @@ describe "server logs in" do
     fill_in "password", with: "wrong pass"
     click_button "Login"
 
-    expect(page).to have_content("Wrong username!")
+    expect(page).to have_content("Password incorrect!")
   end
 
   scenario "server sees the form to login and enters wrong username" do
@@ -50,6 +50,7 @@ describe "server logs in" do
     fill_in "password", with: server.password
     click_button "Login"
 
-    expect(page).to have_content("Wrong password!")
+    expect(page).to have_content("Username incorrect!")
   end
+
 end
