@@ -9,13 +9,35 @@ body {
   padding-top: 5em;
 }
 
+.center-content {
+  text-align: center;
+}
+
+.brand-logo {
+  font-weight: bold;
+  font-family: sans-serif, helvetica;
+}
+
 .menu-nav {
   margin-top: 5rem;
+  border-top: 1px solid black;
 }
 
 .menu-nav-selectors {
   text-align: center;
-  border-bottom: 1px solid blue;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+/* this overrides bootstrap's navbar float css */
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
 }
