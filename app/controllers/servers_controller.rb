@@ -13,6 +13,7 @@ class ServersController < ApplicationController
       flash[:success] = "Successfully created a new account!"
       redirect_to dashboard_path(@server)
     else
+      flash_handler
       render :new
     end
   end
@@ -34,5 +35,16 @@ class ServersController < ApplicationController
 
   def server_params
     params.require(:server).permit(:name, :username, :password, :password_confirmation)
+  end
+
+  def flash_handler
+    byebug
+    if !params[:password] && !params[:password_confirmation]
+      flash[:failure] = "Please add a password!"
+    elsif !params[:password_confirmation]
+      flash[:failure] = "Please confirm your password!"
+    elsif params[:password] != params[:password_confirmation]
+      flash[:failure] = "Passwords must match!"
+    end
   end
 end

@@ -14,6 +14,8 @@ describe "server creates a new account" do
     fill_in "server[password_confirmation]", with: @server.password
     click_on "Create Account"
 
+    save_and_open_page
+
     expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Logged in as #{@server.username}")
     expect(page).to have_content("Name: #{@server.name}")
