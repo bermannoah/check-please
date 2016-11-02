@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-      
+
   end
 
 
@@ -13,4 +13,9 @@ class OrdersController < ApplicationController
     redirect_to category_name_path(item.category.name)
   end
 
+
+  def destroy
+    @order.delete(params[:format])
+    redirect_to orders_path
+  end
 end

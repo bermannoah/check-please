@@ -5,6 +5,7 @@
     <tr>
       <td><%= item.name %></td>
       <td><%= item.price %></td>
+      <td><%= button_to "Remove", orders_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
     </tr>
   <% end  %>
 </table>

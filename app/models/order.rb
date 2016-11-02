@@ -15,4 +15,8 @@ class Order < ApplicationRecord
     Item.where(id: @contents.keys)
   end
 
+  def delete(item_id)
+    @contents.delete(item_id)
+  end
+
 end
