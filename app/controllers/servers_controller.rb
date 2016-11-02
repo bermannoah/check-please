@@ -7,6 +7,7 @@ class ServersController < ApplicationController
   end
 
   def create
+    @server = Server.new()
   end
 
   def update
