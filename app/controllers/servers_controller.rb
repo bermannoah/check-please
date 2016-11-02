@@ -27,5 +27,12 @@ class ServersController < ApplicationController
   end
 
   def show
+    @server = Server.find(params[:id])
+  end
+  
+  private
+  
+  def server_params
+    params.require(:server).permit(:name, :username, :password, :password_confirmation)
   end
 end
