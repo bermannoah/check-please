@@ -5,7 +5,7 @@ RSpec.describe Ticket, type: :model do
     it "it displays a hash of items" do
       item_1, item_2  = create_list(:item_with_category, 2)
 
-      ticket = Ticket.new({})
+      ticket = Ticket.new
       ticket.add_item(item_1.id)
       ticket.add_item(item_2.id)
 

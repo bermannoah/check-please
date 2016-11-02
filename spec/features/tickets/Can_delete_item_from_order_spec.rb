@@ -10,7 +10,7 @@ feature "user removes items from ticket" do
 
     click_on "Add to Ticket"
 
-    page.find("#TICKET").click
+    page.find("#ticket").click
 
 
     expect(current_path).to eq(tickets_path)

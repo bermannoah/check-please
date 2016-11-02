@@ -2,7 +2,11 @@ class Ticket < ApplicationRecord
 
   attr_reader :contents
 
-  def initialize(initial_contents)
+  has_many :ticket_items
+  has_many :items, through: :ticket_items
+  belongs_to :server
+
+  def initialize(initial_contents = nil)
     @contents = initial_contents || Hash.new
   end
 

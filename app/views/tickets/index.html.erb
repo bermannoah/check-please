@@ -13,7 +13,7 @@
           </td>
           <td><%= button_tag "Update", class: "btn btn-info" %><td>
               <% end %>
-          <td><%= button_to "Remove", tickets_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
+          <td><%= button_to "Remove", ticket_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
       <% end  %>
     </tr>
   </table>

@@ -8,7 +8,8 @@ RSpec.feature "users sees item quantities" do
     visit menu_path
 
     click_on category.name
-    click_on "Add to ticket"
+
+    click_on "Add to Ticket"
 
     page.find("#ticket").click
 
@@ -23,7 +24,7 @@ RSpec.feature "users sees item quantities" do
     visit menu_path
 
     click_on category.name
-    click_on "Add to ticket"
+    click_on "Add to Ticket"
 
     page.find("#ticket").click
 
@@ -31,7 +32,7 @@ RSpec.feature "users sees item quantities" do
     expect(page).to have_selector("input[value='1']")
 
     click_on category.name
-    click_on "Add to ticket"
+    click_on "Add to Ticket"
 
     page.find("#ticket").click
     expect(page).to have_selector("input[value='2']")
