@@ -32,7 +32,9 @@ describe "server creates a new account" do
     fill_in "server[username]", with: @server.username
     click_on "Create Account"
 
-    expect(flash[:failure]).to have_content("Please add a password!")
+    save_and_open_page
+
+    expect(page).to have_content("Please add a password!")
   end
 
   scenario "server cannot create an account without confirming password" do
@@ -47,7 +49,7 @@ describe "server creates a new account" do
 
     click_on "Create Account"
 
-    expect(flash[:failure]).to have_content("Please confirm your password!")
+    expect(page).to have_content("Please confirm your password!")
   end
 
   scenario "server sees an error if they confirm wrong password" do
@@ -63,7 +65,7 @@ describe "server creates a new account" do
 
     click_on "Create Account"
 
-    expect(flash[:failure]).to have_content("Passwords must match!")
+    expect(page).to have_content("Passwords must match!")
   end
 
   scenario "server sees an error if they do not enter username" do
@@ -78,6 +80,6 @@ describe "server creates a new account" do
 
     click_on "Create Account"
 
-    expect(flash[:failure]).to have_content("Please enter a username!")
+    expect(page).to have_content("Please enter a username!")
   end
 end

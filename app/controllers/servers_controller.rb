@@ -30,7 +30,6 @@ class ServersController < ApplicationController
 
   def show
     @server = Server.find(session[:server_id])
-
   end
 
   private
@@ -40,14 +39,14 @@ class ServersController < ApplicationController
   end
 
   def flash_handler
-    if !params[:password] && !params[:password_confirmation]
+    if params[:server][:password].empty? && params[:server][:password_confirmation].empty?
       flash[:failure] = "Please add a password!"
-    elsif !params[:password_confirmation]
+    elsif params[:server][:password_confirmation].empty?
       flash[:failure] = "Please confirm your password!"
-    elsif params[:password] != params[:password_confirmation]
-      flash[:failure] = "Passwords must match!"
-    elsif !params[:username]
+    elsif params[:server][:username].empty?
       flash[:failure] = "Please enter a username!"
+    elsif params[:server][:password] != params[:server][:password_confirmation]
+      flash[:failure] = "Passwords must match!"
     end
   end
 end
