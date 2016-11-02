@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-
+  post '/orders' => 'orders#create', as: "create_order"
+  get "/order"  => "orders#index", as: "orders"
+  delete "/order" => "orders#destroy", as: "order"
   resources :items, only: [:index]
-  get "/menu"  => "categories#index"
+  resources :servers
+
+
+  get "/menu"  => "categories#index", as: "menu"
   root "categories#index"
 
-  resources :servers
   get "/:category_name" => "categories#show", as: "category_name"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
