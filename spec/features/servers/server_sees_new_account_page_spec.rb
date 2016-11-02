@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "server creates a new account" do
+describe "server sees options for a new account" do
 
   let(:server)  {create(:server)}
 
@@ -14,7 +14,7 @@ describe "server creates a new account" do
     visit root_path
     click_on "Login"
 
-    expect(path).to eq("/login")
+    expect(current_path).to eq("/login")
   end
 
   scenario "server sees the form to login" do
