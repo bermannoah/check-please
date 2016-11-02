@@ -1,12 +1,14 @@
 <h3 class="header-font">All Items for  <%= @category.name %>  </h3>
 
- <table class="jumbotron center-block">
-   <tr class="center-block"> <th>Name</th> <th>Price</th></tr>
+<div class="jumbotron table-responsive">
+ <table class="table table-hover table-bordered table-condensed">
+   <tr> <th class="center-content">Name</th> <th class="center-content">Price</th></tr>
    <% @items.each do |item| %>
      <tr>
        <td><%= item.name %></td>
-       <td><%= item.price %></td>
+       <td><%= number_to_currency(item.price, :unit => "$") %></td>
        <td><%= button_to "Add to Order", create_order_path(item_id: item.id), class: "btn btn-success" %></td>
      </tr>
    <% end  %>
  </table>
+</div>
