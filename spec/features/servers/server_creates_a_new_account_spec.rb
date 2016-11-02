@@ -8,13 +8,15 @@ describe "server creates a new account" do
 
     click_on "Create Account"
 
+    save_and_open_page
+
+
     fill_in "server[name]", with: @server.name
     fill_in "server[username]", with: @server.username
     fill_in "server[password]", with: @server.password
     fill_in "server[password_confirmation]", with: @server.password
     click_on "Create Account"
 
-    save_and_open_page
 
     expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Logged in as #{@server.username}")
@@ -65,5 +67,20 @@ describe "server creates a new account" do
     click_on "Create Account"
 
     expect(flash[:failure]).to have_content("Passwords must match!")
+  end
+
+  scenario "server sees an error if they do not enter username" do
+    @server = Server.new(name: "Jeff", password: "321clap", password_confirmation: "321clap")
+    visit login_path
+
+    click_on "Create Account"
+
+    fill_in "server[name]", with: @server.name
+    fill_in "server[password]", with: @server.password
+    fill_in "server[password_confirmation]", with: @server.password
+
+    click_on "Create Account"
+
+    expect(flash[:failure]).to have_content("Please enter a username!")
   end
 end
