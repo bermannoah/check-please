@@ -12,7 +12,11 @@ class Order < ApplicationRecord
   end
 
   def items
-    Item.where(id: @contents.keys)
+    # Item.where(id: @contents.keys)
+    @contents.reduce({}) do |hash, (id,quantity)| 
+      hash[Item.find(id)] = quantity
+      hash
+    end
   end
 
   def delete(item_id)

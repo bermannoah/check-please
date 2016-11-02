@@ -10,7 +10,7 @@ RSpec.feature "users sees item quantities" do
     click_on category.name
     click_on "Add to Order"
 
-    within("#ORDER"){click_on "Order"}
+    page.find("#ORDER").click
 
     expect(page).to have_content("Quantity")
     expect(page).to have_content("1")
