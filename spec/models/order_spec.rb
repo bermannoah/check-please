@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Order, type: :model do
   describe "#items" do
-    it "it displays a array of items" do
+    it "it displays a hash of items" do
       item_1, item_2  = create_list(:item_with_category, 2)
 
       order = Order.new({})
@@ -10,6 +10,17 @@ RSpec.describe Order, type: :model do
       order.add_item(item_2.id)
 
       expect(order.items).to eq({item_1 => 1, item_2 => 1})
+    end
+  end
+  describe "#delete" do
+    it "deletes an item from contents" do
+      item_1 = create(:item_with_category)
+
+      order = Order.new({})
+      order.add_item(item_1.id)
+      order.delete(item_1.id)
+
+      expect(order.items).to be_empty
     end
   end
 end

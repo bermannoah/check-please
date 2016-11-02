@@ -13,14 +13,14 @@ class Order < ApplicationRecord
 
   def items
     # Item.where(id: @contents.keys)
-    @contents.reduce({}) do |hash, (id,quantity)| 
+    @contents.reduce({}) do |hash, (id,quantity)|
       hash[Item.find(id)] = quantity
       hash
     end
   end
 
   def delete(item_id)
-    @contents.delete(item_id)
+    @contents.delete(item_id.to_s)
   end
 
 end
