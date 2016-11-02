@@ -8,7 +8,6 @@ class ServersController < ApplicationController
   end
 
   def create
-    byebug
     @server = Server.new(server_params)
     if @server.save
       flash[:success] = "Successfully created a new account!"
@@ -30,9 +29,9 @@ class ServersController < ApplicationController
   def show
     @server = Server.find(params[:id])
   end
-  
+
   private
-  
+
   def server_params
     params.require(:server).permit(:name, :username, :password, :password_confirmation)
   end
