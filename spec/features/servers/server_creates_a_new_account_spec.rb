@@ -15,7 +15,7 @@ describe "server creates a new account" do
     fill_in "server[password_confirmation]", with: @server.password
     click_on "Create"
 
-    expect(current_path).to eq(/dashboard)
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Logged in as #{@server.username}")
     expect(page).to have_content("Name: #{@server.name}")
     expect(page).to_not have_content("Login")
@@ -31,7 +31,7 @@ describe "server creates a new account" do
     fill_in "server[username]", with: @server.username
     click_on "Create"
 
-    expect(flash[:failure]).to match(/Please add a password! .*/)
+    expect(flash[:failure]).to have_content("Please add a password!")
   end
 
   scenario "server cannot create an account without confirming password" do
@@ -45,7 +45,7 @@ describe "server creates a new account" do
 
     click_on "Create"
 
-    expect(flash[:failure]).to match(/Please confirm your password! .*/)
+    expect(flash[:failure]).to have_content("Please confirm your password!")
   end
 
   scenario "server sees an error if they confirm wrong password" do
@@ -60,6 +60,6 @@ describe "server creates a new account" do
 
     click_on "Create"
 
-    expect(flash[:failure]).to match(/Passwords must match! .*/)
+    expect(flash[:failure]).to have_content("Passwords must match!")
   end
 end
