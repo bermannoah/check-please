@@ -57,8 +57,8 @@
                 <% @categories.each do |category| %>
                 <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name) %> </li>
                 <% end %>
-                <%= link_to orders_path, id: "ORDER" do %>
-                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="order-button-font" id="navbar-order">Order</span></button>
+                <%= link_to tickets_path, id: "ticket" do %>
+                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="ticket-button-font" id="navbar-ticket">ticket</span></button>
                 <% end %>
               </ul>
             </div><!-- /.navbar-collapse -->

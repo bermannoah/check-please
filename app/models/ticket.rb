@@ -1,4 +1,4 @@
-class Order < ApplicationRecord
+class Ticket < ApplicationRecord
 
   attr_reader :contents
 
@@ -24,7 +24,7 @@ class Order < ApplicationRecord
 
   def update_quantity(item_id, quantity)
     @contents[item_id.to_s] = quantity
-    delete(item_id.to_s) if quantity == "0"
+    delete(item_id.to_s) if quantity.to_s == "0"
   end
 
 end

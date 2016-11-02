@@ -8,9 +8,9 @@ RSpec.feature "users sees item quantities" do
     visit menu_path
 
     click_on category.name
-    click_on "Add to Order"
+    click_on "Add to ticket"
 
-    page.find("#ORDER").click
+    page.find("#ticket").click
 
     expect(page).to have_content("Quantity")
     expect(page).to have_selector("input[value='1']")
@@ -23,17 +23,17 @@ RSpec.feature "users sees item quantities" do
     visit menu_path
 
     click_on category.name
-    click_on "Add to Order"
+    click_on "Add to ticket"
 
-    page.find("#ORDER").click
+    page.find("#ticket").click
 
     expect(page).to have_content("Quantity")
     expect(page).to have_selector("input[value='1']")
 
     click_on category.name
-    click_on "Add to Order"
+    click_on "Add to ticket"
 
-    page.find("#ORDER").click
+    page.find("#ticket").click
     expect(page).to have_selector("input[value='2']")
 
   end

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  post '/orders' => 'orders#create',   as: "create_order"
-  get "/order"  => "orders#index",     as: "orders"
-  delete "/order" => "orders#destroy", as: "order"
-  post "/order" => "orders#update",   as: "update_order"
+  post '/tickets' => 'tickets#create',   as: "create_ticket"
+  get "/tickets"  => "tickets#index",     as: "tickets"
+  delete "/ticket" => "tickets#destroy", as: "ticket"
+  post "/ticket" => "tickets#update",   as: "update_ticket"
   resources :items, only: [:index]
   resources :servers
 

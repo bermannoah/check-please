@@ -1,4 +1,4 @@
-class OrderItem < ApplicationRecord
-  belongs_to :order
+class ticketItem < ApplicationRecord
+  belongs_to :ticket
   belongs_to :item
 end
