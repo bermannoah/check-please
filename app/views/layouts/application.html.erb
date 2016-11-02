@@ -28,11 +28,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <%= link_to orders_path do %>
-                   <i class="glyphicon glyphicon-shopping-cart"> Order </i>
-                  <% end %>
-                </li>
+                <button type="button" class="btn btn-default navbar-btn login-button-margin">Login</button>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -48,13 +44,16 @@
                 <% @categories.each do |category| %>
                 <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name) %> </li>
                 <% end %>
+                <%= link_to orders_path do %>
+                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart order-button-fix"><span class="order-button-font">Order</span></button>
+                <% end %>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
       </div>
 
-        <div class="jumbotron container center-content">
+        <div class="container center-content">
           <%= yield %>
         </div>
         
