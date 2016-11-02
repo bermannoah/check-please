@@ -1,7 +1,7 @@
-<h3>All Items for  <%= @category.name %>  </h3>
+<h3 class="header-font">All Items for  <%= @category.name %>  </h3>
 
- <table>
-   <tr> <th>Name</th> <th>Price</th></tr>
+ <table class="jumbotron center-block">
+   <tr class="center-block"> <th>Name</th> <th>Price</th></tr>
    <% @items.each do |item| %>
      <tr>
        <td><%= item.name %></td>
