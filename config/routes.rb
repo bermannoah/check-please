@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/orders' => 'orders#create', as: "create_order"
   get "/order"  => "orders#index", as: "orders"
   delete "/order" => "orders#destroy", as: "order"
+
   resources :items, only: [:index]
   resources :servers, except: [:show]
   

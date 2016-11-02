@@ -8,6 +8,7 @@ class ServersController < ApplicationController
   end
 
   def create
+    byebug
     @server = Server.new(server_params)
     if @server.save
       flash[:success] = "Successfully created a new account!"
