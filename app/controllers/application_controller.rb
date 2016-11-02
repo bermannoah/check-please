@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   before_action :set_categories, :set_order
 
+  def current_user
+    @current_user ||= Server.find(session[:server_id]) if session[:server_id]
+  end
+
+  helper_method :current_user
+  
   def set_order
     @order = Order.new(session[:order])
   end

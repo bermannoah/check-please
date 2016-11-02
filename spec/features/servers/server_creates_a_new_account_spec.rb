@@ -8,9 +8,6 @@ describe "server creates a new account" do
 
     click_on "Create Account"
 
-    save_and_open_page
-
-
     fill_in "server[name]", with: @server.name
     fill_in "server[username]", with: @server.username
     fill_in "server[password]", with: @server.password
