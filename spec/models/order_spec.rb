@@ -22,6 +22,17 @@ RSpec.describe Order, type: :model do
 
       expect(order.items).to be_empty
     end
+    describe "#update" do
+      it "changes an item from quantity" do
+        item_1 = create(:item_with_category)
+
+        order = Order.new({})
+        order.add_item(item_1.id)
+        order.update_quantity(item_1.id, 2)
+
+        expect(order.items).to eq({item_1 => 2})
+      end
+    end
   end
 end
 

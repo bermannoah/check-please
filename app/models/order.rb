@@ -23,4 +23,9 @@ class Order < ApplicationRecord
     @contents.delete(item_id.to_s)
   end
 
+  def update_quantity(item_id, quantity)
+    @contents[item_id.to_s] = quantity
+    delete(item_id) if quantity == 0
+  end
+
 end
