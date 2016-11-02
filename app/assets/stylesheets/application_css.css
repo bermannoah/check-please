@@ -1,0 +1,77 @@
+/* app wide styles */
+
+body {
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.3) 100%), url(https://source.unsplash.com/random?food);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: transparent;
+  padding-top: 5em;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.header-font {
+  color: #000;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.brand-logo {
+  font-weight: bold;
+  font-family: sans-serif, helvetica;
+}
+
+/* menu specific syling */ 
+.menu-nav {
+  margin-top: 5rem;
+  border-top: 1px solid black;
+}
+
+.menu-nav-selectors {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.login-button-margin {
+  margin-right: 1rem;
+}
+
+.glyphicon-button-fix {
+  margin-top: 5px;
+}
+
+.order-button-font {
+  font-family: sans-serif;
+  margin: 1px;
+  padding: 1px;
+}
+
+
+/* this overrides bootstrap's navbar float css */
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+/* this allows us to custom style jumbotrons */
+
+.jumbotron {
+  margin: 5rem;
+}
