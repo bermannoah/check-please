@@ -19,5 +19,4 @@ Rails.application.routes.draw do
   root "categories#index"
 
   get "/:category_name" => "categories#show", as: "category_name"
-
 end

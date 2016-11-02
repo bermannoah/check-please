@@ -21,7 +21,6 @@ describe "server logs in" do
     visit root_path
     click_on "Login"
 
-    save_and_open_page
     fill_in "username", with: server.username
     fill_in "password", with: server.password
     click_button "Login"
