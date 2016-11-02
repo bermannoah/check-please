@@ -1,6 +1,20 @@
 require 'rails_helper'
 
-# RSpec.describe Order, type: :model do
+RSpec.describe Order, type: :model do
+  describe "#items" do
+    it "it displays a array of items" do
+      item_1, item_2  = create_list(:item_with_category, 2)
+
+      order = Order.new({})
+      order.add_item(item_1.id)
+      order.add_item(item_2.id)
+
+      expect(order.items).to eq([item_1, item_2])
+    end
+  end
+end
+
+
 #   describe 'validations' do
 #     context "invalid attributes" do
 #       it "cannot be created without a location" do

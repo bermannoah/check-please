@@ -6,7 +6,7 @@
      <tr>
        <td><%= item.name %></td>
        <td><%= item.price %></td>
-       <td><%= button_to "Add to Order", orders_path(item_id: item.id), class: "btn btn-success" %></td>
+       <td><%= button_to "Add to Order", create_order_path(item_id: item.id), class: "btn btn-success" %></td>
      </tr>
    <% end  %>
  </table>

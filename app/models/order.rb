@@ -11,4 +11,8 @@ class Order < ApplicationRecord
     @contents[item_id.to_s] += 1
   end
 
+  def items
+    Item.where(id: @contents.keys)
+  end
+
 end

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  post '/orders' => 'orders#create', as: "orders"
+  post '/orders' => 'orders#create', as: "create_order"
+  get "/order"  => "orders#index", as: "orders"
 
   resources :items, only: [:index]
-  resources :orders, only: [:show]
   resources :servers
 
 
