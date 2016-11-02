@@ -21,8 +21,9 @@ describe "server sees options for a new account" do
     visit root_path
     click_on "Login"
 
-    expect(page.has_field?("username", type: text_area)).to eq(true)
-    expect(page.has_field?("password", type: password)).to eq(true)
+    expect(page.has_field?("username")).to eq(true)
+    expect(page.has_field?("password")).to eq(true)
+    expect(page).to have_link("Login")
     expect(page).to have_link("Create Account")
   end
 end
