@@ -19,6 +19,10 @@ class ServersController < ApplicationController
     end
   end
 
+  def show
+    @server = Server.find(session[:server_id])
+  end
+
   def update
   end
 
@@ -26,10 +30,6 @@ class ServersController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
-    @server = Server.find(session[:server_id])
   end
 
   private
