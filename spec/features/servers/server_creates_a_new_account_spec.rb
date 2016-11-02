@@ -32,8 +32,6 @@ describe "server creates a new account" do
     fill_in "server[username]", with: server.username
     click_on "Create Account"
 
-    save_and_open_page
-
     expect(page).to have_content("Please add a password!")
   end
 
