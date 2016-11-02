@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   def set_ticket
     @ticket = Ticket.new(session[:ticket])
   end
+  
+  def current_user
+    @current_user ||= Server.find(session[:server_id]) if session[:server_id]
+  end
+
+  helper_method :current_user
 
   def set_categories
     @categories = Category.all
