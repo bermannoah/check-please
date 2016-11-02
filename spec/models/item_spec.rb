@@ -42,7 +42,7 @@ RSpec.describe Item, type: :model do
     it "has many tables" do
       item = Item.new(name: "test", price: 100)
 
-      expect(item).to respond_to(:table_items)
+      expect(item).to respond_to(:ticket_items)
     end
   end
 end

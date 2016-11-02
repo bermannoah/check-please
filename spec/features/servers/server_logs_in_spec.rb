@@ -14,40 +14,42 @@ describe "server logs in" do
     visit root_path
     click_on "Login"
 
-    expect(path).to eq("/login")
+    expect(current_path).to eq("/login")
   end
 
   scenario "server sees the form to login and enters the right login credentials" do
     visit root_path
     click_on "Login"
 
-    fill_in "server[username]", with: server.username
-    fill_in "server[password]", with: server.password
+    fill_in "username", with: server.username
+    fill_in "password", with: server.password
     click_button "Login"
 
+
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("Logged in as #{server.usernmae}")
+    expect(page).to have_content("Logged in as #{server.username}")
   end
 
   scenario "server sees the form to login and enters wrong password" do
     visit root_path
     click_on "Login"
 
-    fill_in "server[username]", with: server.username
-    fill_in "server[password]", with: "wrong pass"
+    fill_in "username", with: server.username
+    fill_in "password", with: "wrong pass"
     click_button "Login"
 
-    expect(flash[:failure]).to have_content("Wrong username!")
+    expect(page).to have_content("Password incorrect!")
   end
 
   scenario "server sees the form to login and enters wrong username" do
     visit root_path
     click_on "Login"
 
-    fill_in "server[username]", with: "wrong username"
-    fill_in "server[password]", with: server.password
+    fill_in "username", with: "wrong username"
+    fill_in "password", with: server.password
     click_button "Login"
 
-    expect(flash[:failure]).to have_content("Wrong password!")
+    expect(page).to have_content("Username incorrect!")
   end
+
 end

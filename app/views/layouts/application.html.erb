@@ -28,16 +28,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="login-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <button type="button" class="btn btn-default navbar-btn login-button-margin">Login</button>
+
+                <% if logged_in? %>
+                  <li><p>Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
+                <% else %>
+                  <a type="button" href="/login" class="btn btn-default navbar-btn login-button-margin">Login</a>
+                <% end %>
+
               </ul>
             </div><!-- /.navbar-collapse -->
-          
+
           </div><!-- /.container-fluid -->
         </nav>
       </div>
       <br/>
       <br/>
-      
+
       <div>
         <nav class="navbar navbar-default navbar-fixed-top menu-nav">
           <div class="container-fluid">
@@ -57,20 +63,24 @@
                 <% @categories.each do |category| %>
                 <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name) %> </li>
                 <% end %>
-                <%= link_to orders_path do %>
-                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="order-button-font" id="navbar-order">Order</span></button>
+                <%= link_to tickets_path, id: "ticket" do %>
+                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="ticket-button-font" id="navbar-ticket">ticket</span></button>
                 <% end %>
               </ul>
             </div><!-- /.navbar-collapse -->
-      
+
           </div><!-- /.container-fluid -->
         </nav>
-      
+
       </div>
 
+
+        <% flash.each do |key, message| %>
+          <%= content_tag :div, message %>
+        <% end  %>
         <div class="container center-content">
           <%= yield %>
         </div>
-        
+
   </body>
 </html>
