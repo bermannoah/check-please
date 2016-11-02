@@ -1,14 +1,18 @@
-/* across app styles */
+/* app wide styles */
 
 body {
-  background-image: url(https://source.unsplash.com/random?food);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://source.unsplash.com/random?food);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-color: transparent;
   padding-top: 5em;
 }
 
+body::img {
+  opacity: 0.75;
+}
 .center-content {
   text-align: center;
 }
@@ -18,6 +22,7 @@ body {
   font-family: sans-serif, helvetica;
 }
 
+/* menu specific syling */ 
 .menu-nav {
   margin-top: 5rem;
   border-top: 1px solid black;
@@ -41,3 +46,10 @@ body {
         text-align: center;
     }
 }
+
+/* this allows us to custom style jumbotrons */
+
+.jumbotron {
+  margin: 5rem;
+}
+
