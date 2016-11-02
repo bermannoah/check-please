@@ -1,3 +1,18 @@
+/* across app styles */
+
+body {
+  background-image: url(https://source.unsplash.com/random?food);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 5em;
+}
+
+.menu-nav {
+  margin-top: 5rem;
+}
+
 .menu-nav-selectors {
   text-align: center;
   border-bottom: 1px solid blue;
