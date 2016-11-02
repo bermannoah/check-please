@@ -6,7 +6,7 @@
     <% @order.items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= number_to_currency(item.price, :unit => "$") %></td>        
+        <td><%= number_to_currency(item.price, :unit => "$") %></td>
         <td><%= button_to "Remove", orders_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
         <% end  %>
       </tr>
