@@ -12,7 +12,6 @@ describe "server adds items to the cart" do
     expect(page).to have_content("#{item_1.price}")
 
     click_on "Add to Order"
-    # click_on "View Order"
 
     expect(current_path).to eq(category_name_path(category_1.name))
   end
