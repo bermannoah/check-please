@@ -9,7 +9,7 @@ RSpec.describe Order, type: :model do
       order.add_item(item_1.id)
       order.add_item(item_2.id)
 
-      expect(order.items).to eq([item_1, item_2])
+      expect(order.items).to eq({item_1 => 1, item_2 => 1})
     end
   end
 end
