@@ -13,7 +13,7 @@ RSpec.feature "users sees item quantities" do
     page.find("#ORDER").click
 
     expect(page).to have_content("Quantity")
-    expect(page).to have_content("1")
+    expect(page).to have_selector("input[value='1']")
   end
 
   it "increases quantity count as you add items" do
@@ -28,13 +28,13 @@ RSpec.feature "users sees item quantities" do
     page.find("#ORDER").click
 
     expect(page).to have_content("Quantity")
-    expect(page).to have_content("1")
+    expect(page).to have_selector("input[value='1']")
 
     click_on category.name
     click_on "Add to Order"
 
     page.find("#ORDER").click
-    expect(page).to have_content("2")
+    expect(page).to have_selector("input[value='2']")
 
   end
 end

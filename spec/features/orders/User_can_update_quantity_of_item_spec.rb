@@ -12,12 +12,12 @@ RSpec.feature "User changes quantity in order index view" do
 
     page.find("#ORDER").click
 
-    expect(page).to have_content("2")
+    expect(page).to have_selector("input[value='2']")
 
-    fill_in "order[quantity]", with: "1"
+    find("#quantity").set ("1")
 
     click_on "Update"
-
-    expect(page).to have_content("1")
+    save_and_open_page
+    expect(page).to have_selector("input[value='1']")
   end
 end

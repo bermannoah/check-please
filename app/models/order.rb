@@ -12,9 +12,8 @@ class Order < ApplicationRecord
   end
 
   def items
-    # Item.where(id: @contents.keys)
-    @contents.reduce({}) do |hash, (id,quantity)|
-      hash[Item.find(id)] = quantity
+    @contents.reduce({}) do |hash, (id, quantity)|
+      hash[Item.find(id.to_i)] = quantity
       hash
     end
   end
@@ -25,7 +24,7 @@ class Order < ApplicationRecord
 
   def update_quantity(item_id, quantity)
     @contents[item_id.to_s] = quantity
-    delete(item_id) if quantity == 0
+    delete(item_id.to_s) if quantity == "0"
   end
 
 end

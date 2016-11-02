@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  post '/orders' => 'orders#create', as: "create_order"
-  get "/order"  => "orders#index", as: "orders"
+  post '/orders' => 'orders#create',   as: "create_order"
+  get "/order"  => "orders#index",     as: "orders"
   delete "/order" => "orders#destroy", as: "order"
+  post "/order" => "orders#update",   as: "update_order"
   resources :items, only: [:index]
   resources :servers
 

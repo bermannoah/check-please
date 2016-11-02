@@ -18,4 +18,12 @@ class OrdersController < ApplicationController
     @order.delete(params[:format])
     redirect_to orders_path
   end
+
+  def update
+    item_id = params[:item_id]
+    quantity = params[:quantity]
+
+    @order.update_quantity(item_id, quantity)
+    redirect_to orders_path
+  end
 end
