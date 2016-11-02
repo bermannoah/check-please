@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="login-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
 
-                <% if current_user %>
+                <% if logged_in? %>
                   <li><p>Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
                 <% else %>
                   <a type="button" href="/login" class="btn btn-default navbar-btn login-button-margin">Login</a>

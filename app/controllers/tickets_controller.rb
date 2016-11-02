@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
     item = Item.find(params[:item_id])
     @ticket.add_item(item.id)
     session[:ticket] = @ticket.contents
-    flash[:notice] = "Item added to ticket"
+    # flash[:notice] = "Item added to ticket"
     redirect_to category_name_path(item.category.name)
   end
 
