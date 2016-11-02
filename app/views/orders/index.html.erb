@@ -3,22 +3,18 @@
 <div class="jumbotron table-responsive">
   <table class="table table-hover table-bordered table-condensed">
     <tr> <th class="center-content">Name</th> <th class="center-content">Price</th><th class="center-content">Quantity</th></tr>
-    <% @order.items.each do |item, quantity| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= number_to_currency(item.price, :unit => "$") %></td>
-        <td><%= form_tag update_order_path do %>
-            <%= text_field_tag "quantity", quantity%>
-            <%= hidden_field_tag "item_id", item.id%>
-        </td>
-        <td><%= button_tag "Update", class: "btn btn-info" %><td>
-          <% end %>
-
-
-
-
-        <td><%= button_to "Remove", orders_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
-        <% end  %>
-      </tr>
+      <% @order.items.each do |item, quantity| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= number_to_currency(item.price, :unit => "$") %></td>
+          <td><%= form_tag update_order_path do %>
+              <%= text_field_tag "quantity", quantity%>
+              <%= hidden_field_tag "item_id", item.id%>
+          </td>
+          <td><%= button_tag "Update", class: "btn btn-info" %><td>
+              <% end %>
+          <td><%= button_to "Remove", orders_path(item.id), method: "delete", class:"btn btn-danger"%> </td>
+      <% end  %>
+    </tr>
   </table>
 </div>
