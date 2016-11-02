@@ -45,7 +45,7 @@
                 <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name) %> </li>
                 <% end %>
                 <%= link_to orders_path do %>
-                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart order-button-fix"><span class="order-button-font">Order</span></button>
+                  <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="order-button-font" id="navbar-order">Order</span></button>
                 <% end %>
               </ul>
             </div><!-- /.navbar-collapse -->

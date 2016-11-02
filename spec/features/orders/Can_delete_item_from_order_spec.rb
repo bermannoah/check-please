@@ -11,7 +11,7 @@ feature "user removes items from order" do
 
     click_on "Add to Order"
 
-    click_on "Order"
+      click_on "Order"
 
     expect(current_path).to eq(orders_path)
     expect(page).to have_content(item_1.name)
