@@ -30,10 +30,10 @@ body {
   font-family: sans-serif, helvetica;
 }
 
-/* menu specific syling */ 
+/* menu specific syling */
 .menu-nav {
   margin-top: 5rem;
-  border-top: 1px solid black;
+  bticket-top: 1px solid black;
 }
 
 .menu-nav-selectors {
@@ -50,7 +50,7 @@ body {
   margin-top: 5px;
 }
 
-.order-button-font {
+.ticket-button-font {
   font-family: sans-serif;
   margin: 1px;
   padding: 1px;
