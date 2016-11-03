@@ -1,0 +1,13 @@
+<h1>Item <%= @item.name %>:</h1>
+<table>
+  <tr> <th>Name</th> <th>Price</th></tr>
+    <tr>
+      <td><%= @item.name %></td>
+      <td><%= @item.price %></td>
+      <% if @item.retired == "N" %>
+        <td><%= button_to "Add to Ticket", create_ticket_path(item_id: @item.id), class: "btn btn-success" %></td>
+      <% else %>
+        <td>Item Retired</td>
+     <% end %>
+    </tr>
+</table>

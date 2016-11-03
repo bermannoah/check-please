@@ -14,7 +14,11 @@ FactoryGirl.define do
 
   factory :server do
     sequence(:name)  {|n|  "server name #{n}"}
-    sequence(:username)  {|n|  "server username #{n}"}
-    sequence(:password)  {|n|  "password #{n}"}
+    sequence(:username)  {|n|  "username_#{n}"}
+    sequence(:password)  {|n|  "password_#{n}"}
+
+    factory :admin do
+      role 1
+    end
   end
 end
