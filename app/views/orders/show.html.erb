@@ -1,0 +1,15 @@
+<h3><%= link_to "Order #{order.id}", order_path(order) %></h3>
+
+<table>
+  <tr> <th>Name</th> <th>Price</th></tr>
+    <tr>
+      <% @order.
+      <td><%= item.name %></td>
+      <td><%= @item.price %></td>
+      <% if @item.retired == "N" %>
+        <td><%= button_to "Add to Ticket", create_ticket_path(item_id: @item.id), class: "btn btn-success" %></td>
+      <% else %>
+        <td>Item Retired</td>
+     <% end %>
+    </tr>
+</table>
