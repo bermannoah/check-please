@@ -15,6 +15,7 @@ describe "server can see items within orders" do
     click_on "#{category.name}"
 
     click_on "Add to Ticket"
+    click_on "Add to Ticket"
 
     page.find("#ticket").click
 
