@@ -5,8 +5,7 @@ RSpec.describe "server creates and views orders" do
     server = create(:server)
     item   = create(:item_with_category)
     category = item.category
-
-    expect(Server.all.count).to eq(1)
+    expect(Item.all.count).to eq(1)
     visit login_path
 
     fill_in "username", with: server.username
