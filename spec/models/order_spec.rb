@@ -9,13 +9,6 @@ RSpec.describe Order, type: :model do
 
         expect(order).to be_invalid
       end
-
-      it "cannot be created without being paid" do
-        server = create(:server)
-        order = Order.new(server_id: server.id, total: 1000)
-
-        expect(order).to be_invalid
-      end
       
       it "cannot be created without a server id" do
         server = create(:server)

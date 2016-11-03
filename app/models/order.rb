@@ -1,6 +1,5 @@
 class Order < ApplicationRecord
   validates :total, presence: true
-  validates :paid?, presence: true
   validates :server_id, presence: true
   
   

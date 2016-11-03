@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def create
     server = Server.find(server_id)
-    order = Order.new(server:server, total:@ticket.total, paid?: false )
+    order = Order.new(server_id: server.id, total: @ticket.total, paid?: false )
     if order.save
       create_order_items(order.id)
       redirect_to orders_path
