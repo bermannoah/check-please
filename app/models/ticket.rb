@@ -31,4 +31,8 @@ class Ticket < ApplicationRecord
     delete(item_id.to_s) if quantity.to_s == "0"
   end
 
+  def total
+    items.reduce(0) {|sum, (item,quantity)| sum += item.price*quantity}
+  end
+
 end
