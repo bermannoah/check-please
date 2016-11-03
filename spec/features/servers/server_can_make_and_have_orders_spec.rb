@@ -21,6 +21,6 @@ RSpec.describe "server creates and views orders" do
     click_button "Submit Ticket"
 
     expect(server.orders.count).to eq(1)
-    expect(current_path).to eq(dashboard_path)
+    expect(current_path).to eq(orders_path)
   end
 end

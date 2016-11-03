@@ -1,21 +1,27 @@
 class OrdersController < ApplicationController
+  def index
+
+  end
+
   def create
-    items_and_quantity = session[:ticket]
-    order = Order.create()
+    server = Server.find(server_id)
+    order = Order.new(server:server, total:@ticket.total, paid?: false )
+    if order.save
+      create_order_items(order.id)
+      redirect_to orders_path
+    else
+      redirect_to dashboard_path
+    end
   end
 
 
   private
 
-  def user_id
-    params.permit(:user_id)[:user_id].to_i
+  def server_id
+    params.permit(:server_id)[:server_id].to_i
   end
 
-  def item_ids_and_quantity
-    items_and_quantity = session[:ticket]
-  end
-
-  def create_order_items
-
+  def create_order_items(order_id)
+    @ticket.create_order_items(order_id)
   end
 end

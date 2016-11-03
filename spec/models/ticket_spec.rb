@@ -56,6 +56,21 @@ RSpec.describe Ticket, type: :model do
         expect(ticket.total).to eq(total)
       end
     end
+    describe "#create_order_items" do
+      it "creates order_items for each item" do
+        server = Server.create(name:"test", username:"test", password:"test", password_confirmation:"test")
+        ticket = Ticket.new({})
+        item_1 = create(:item_with_category)
+        ticket.add_item(item_1.id)
+        order = Order.create(server:server, total:ticket.total, paid?: false)
+
+        ticket.create_order_items(order.id)
+
+        expect(OrderItems.all.count).to eq(1)
+        expect(OrderItems.first.item_id).to eq(item_1.id)
+
+      end
+    end
   end
 end
 
