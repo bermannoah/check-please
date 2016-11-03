@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   resources :items, only: [:index]
 
   get "/dashboard" => "servers#show"
-  resources :servers, except: [:show]
 
+  namespace :admin do
+    get "/dashboard" => "dashboard#show"
+  end
+
+  resources :servers, except: [:show]
 
   get "/menu"  => "categories#index", as: "menu"
   root "categories#index"

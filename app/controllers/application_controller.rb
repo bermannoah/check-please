@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_categories, :set_ticket
+  helper_method :current_user, :logged_in?
 
   def set_ticket
     @ticket = Ticket.new(session[:ticket])
@@ -15,10 +16,11 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
-
-  helper_method :current_user, :logged_in?
-
   def set_categories
     @categories = Category.all
+  end
+
+  def current_admin?
+    current_user && current_user.admin?
   end
 end
