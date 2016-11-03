@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/order"  => "orders#index", as: "orders"
   delete "/order" => "orders#destroy", as: "order"
 
-  resources :items, only: [:index]
+  resources :items, only: [:index, :show]
 
   get "/dashboard" => "servers#show"
   resources :servers, except: [:show]

@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :item do
     sequence(:name)  {|n|  "item name #{n}"}
     sequence(:price) {|n|  n.to_f }
+    retired "N"
 
     factory :item_with_category do
       category {create(:category)}
