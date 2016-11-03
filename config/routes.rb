@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get "/dashboard" => "servers#show"
   resources :servers, except: [:show]
 
-
   get "/menu"  => "categories#index", as: "menu"
   root "categories#index"
 
