@@ -14,7 +14,10 @@ describe "server is not logged in" do
     
     page.find("#ticket").click
     
-    expect(page).to_not have_content("Submit Ticket")
-    expect(page).to have_content("Login or Create Account to Submit Ticket")
+    expect(page).to_not have_button("Submit Ticket")
+    expect(page).to have_content("to Submit Ticket")
+    expect(page).to have_button("Create Account")
+    expect(page).to have_button("Login")
+
   end
 end
