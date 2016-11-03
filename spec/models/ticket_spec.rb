@@ -40,8 +40,20 @@ RSpec.describe Ticket, type: :model do
         ticket.update_quantity(item_1.id, 0)
 
         expect(ticket.items).to be_empty
+      end
+    end
+    describe "#total" do
+      it "has can total of all items" do
+        item_1,item_2 = create_list(:item_with_category,2)
+        ticket = Ticket.new({})
+        total = (item_1.price*2)+item_2.price
+
+        ticket.add_item(item_1.id)
+        ticket.add_item(item_1.id)
+        ticket.add_item(item_2.id)
 
 
+        expect(ticket.total).to eq(total)
       end
     end
   end
