@@ -66,8 +66,8 @@ RSpec.describe Ticket, type: :model do
 
         ticket.create_order_items(order.id)
 
-        expect(OrderItems.all.count).to eq(1)
-        expect(OrderItems.first.item_id).to eq(item_1.id)
+        expect(OrderItem.all.count).to eq(1)
+        expect(OrderItem.first.item_id).to eq(item_1.id)
 
       end
     end

@@ -10,11 +10,11 @@ describe "server sees items" do
 
     click_on category.name
 
-    within ".item_#{item_1.id}" do
+    within "#item_#{item_1.id}" do
       expect(page).to have_button("Add to Ticket")
     end
 
-    within ".item_#{item_2.id}" do
+    within "#item_#{item_2.id}" do
       expect(page).to have_button("Add to Ticket")
     end
   end
@@ -28,11 +28,11 @@ describe "server sees items" do
 
     click_on category.name
 
-    within ".item_#{item_1.id}" do
+    within "#item_#{item_1.id}" do
       expect(page).to have_button("Add to Ticket")
     end
 
-    within ".item_#{item_2.id}" do
+    within "#item_#{item_2.id}" do
       expect(page).to have_button("Item Retired")
     end
   end

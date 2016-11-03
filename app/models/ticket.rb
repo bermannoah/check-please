@@ -36,7 +36,7 @@ class Ticket < ApplicationRecord
   end
 
   def create_order_items(order_id)
-    items.each {|item,quantity| quantity.times {OrderItems.create(item_id:item.id, order_id:order_id)}}
+    items.each {|item,quantity| quantity.times {OrderItem.create(item_id:item.id, order_id:order_id)}}
   end
 
 end
