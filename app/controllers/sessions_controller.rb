@@ -9,7 +9,13 @@ class SessionsController < ApplicationController
       if @server.authenticate(params[:password])
         flash[:success] = "Successfully logged in!"
         session[:server_id] = @server.id
-        redirect_to dashboard_path
+
+        if @server.admin?
+          redirect_to admin_dashboard_path
+        else
+          redirect_to dashboard_path
+        end
+        
       else
         flash[:failure] = "Password incorrect!"
         render :new
