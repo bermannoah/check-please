@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   def create
     items_and_quantity = session[:ticket]
     order = Order.create()
-    binding.pry
   end
 
 

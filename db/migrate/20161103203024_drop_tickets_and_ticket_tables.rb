@@ -1,7 +1,6 @@
 class DropTicketsAndTicketTables < ActiveRecord::Migration[5.0]
   def change
     drop_table :ticket_items
-    drop_table :tickets
 
     create_table :orders do |t|
       t.integer :server_id, index: true

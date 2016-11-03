@@ -52,7 +52,16 @@ ActiveRecord::Schema.define(version: 20161103203024) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.string   "location"
+    t.integer  "server_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["server_id"], name: "index_tickets_on_server_id", using: :btree
+  end
+
   add_foreign_key "items", "categories"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
+  add_foreign_key "tickets", "servers"
 end
