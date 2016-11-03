@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   def index
-
+    @server = Server.find(session[:server_id])
+    @orders = @server.orders.all
+  end
+  
+  def show
   end
 
   def create
