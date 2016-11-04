@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  
   def index
     @server = Server.find(session[:server_id])
     @orders = @server.orders.all
@@ -6,7 +7,6 @@ class OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
-    binding.pry
   end
 
   def create

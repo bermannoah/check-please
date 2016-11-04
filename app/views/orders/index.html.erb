@@ -1,7 +1,7 @@
   <ul>
     <% @orders.each do |order| %>
     <li>
-      <%= link_to "Order #{order.id}", get_order_path(order) %>
+      <%= link_to "Order #{order.id}", get_order_path(order.id) %>
     </li>
     <% end %> 
    </ul>

@@ -46,4 +46,17 @@ RSpec.describe Order, type: :model do
       expect(order).to respond_to(:items)
     end
   end
+  
+  describe "methods" do
+    it "is able to prep lines for show" do
+      order = create(:order_with_server)
+      item_1, item_2 = create_list(:item, 2)
+      order_item_1 = OrderItem.create(order: order, item: item_1)
+      order_item_2 = OrderItem.create(order: order, item: item_1)
+      order_item_3 = OrderItem.create(order: order, item: item_2)
+
+      expect(order.prep_for_show).to eq([[item_1.name, 2, (item_1.price * 2)], [item_2.name, 1, item_2.price]])
+      
+    end
+  end
 end
