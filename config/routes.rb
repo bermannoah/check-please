@@ -10,15 +10,20 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  post '/orders' => 'orders#create', as: "create_order"
+  post '/order/:server_id' => 'orders#create', as: "create_order"
   get "/order"  => "orders#index", as: "orders"
+  get "/order/:id" => "orders#show", as: "get_order"
   delete "/order" => "orders#destroy", as: "order"
 
-  resources :items, only: [:index]
+  resources :items, only: [:index, :show]
 
   get "/dashboard" => "servers#show"
-  resources :servers, except: [:show]
 
+  namespace :admin do
+    get "/dashboard" => "dashboard#show"
+  end
+
+  resources :servers, except: [:show]
 
   get "/menu"  => "categories#index", as: "menu"
   root "categories#index"

@@ -6,4 +6,7 @@ class Server < ApplicationRecord
   validates :password_digest, presence: true
 
   has_many :tables
+
+  enum role: [:default, :admin]
+  has_many :orders
 end

@@ -11,6 +11,46 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require "pry"
+
+RSpec.configure do |config|
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
+end
+
+
+
+
+def log_server_in_one_item
+  @server = create(:server)
+  @item   = create(:item_with_category)
+  @category = item.category
+
+  visit login_path
+
+  fill_in "username", with: server.username
+  fill_in "password", with: server.password
+
+  click_on "Login"
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -26,7 +66,7 @@ require "pry"
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

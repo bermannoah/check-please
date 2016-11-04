@@ -17,4 +17,9 @@
       <% end  %>
     </tr>
   </table>
+  <% if logged_in? %>
+    <%= button_to "Submit Ticket", create_order_path(current_user.id), method: "post", class:"btn btn-success" %>
+  <% else %>
+    <p><%= button_to "Login", login_path, class:"btn btn-success", id:"ticket_login" %> or <%= button_to "Create Account", login_path, class:"btn btn-success" %> to Submit Ticket</p>
+  <% end %>
 </div>

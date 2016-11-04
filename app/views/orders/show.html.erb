@@ -1,0 +1,10 @@
+<h3><%= link_to "Order #{@order.id}", order_path(@order) %></h3>
+
+<table>
+  <tr> <th>Item</th> <th>Quantity</th> <th>Subtotal</th></tr>
+    <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
+    <tr>
+      <td><%= link_to item.name, item_path(item.id) %></td><td><%= quantity %></td><td><%= subtotal %></td>
+    </tr>
+    <% end %>
+</table>
