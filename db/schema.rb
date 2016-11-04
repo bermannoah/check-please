@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104163917) do
+ActiveRecord::Schema.define(version: 20161104180035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 20161104163917) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "server_id"
-    t.float   "total"
-    t.integer "status",    default: 0
+    t.integer  "server_id"
+    t.float    "total"
+    t.integer  "status",     default: 0
+    t.datetime "created_at", default: '2016-11-04 18:06:21', null: false
+    t.datetime "updated_at", default: '2016-11-04 18:06:21', null: false
     t.index ["server_id"], name: "index_orders_on_server_id", using: :btree
   end
 
