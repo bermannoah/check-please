@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Admin::ServerController < ApplicationController
   before_action :require_admin
 
   def show
@@ -13,7 +13,7 @@ class Admin::DashboardController < ApplicationController
     @admin = Server.find(session[:server_id])
     if @admin.update(admin_edit_params)
       flash[:success] = "Your account data has been updated!"
-      redirect_to admin_dashboard_path(@admin)
+      redirect_to admin_server_path(@admin)
     else
       render :edit
     end

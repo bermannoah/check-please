@@ -21,9 +21,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/dashboard" => "dashboard#show"
-    get "/dashboard/:id" => "dashboard#update"
+    get "/dashboard/:id" => "dashboard#edit"
     post "/dashboard/:id" => "dashboard#update"
     put "/dashboard/:id" => "dashboard#update"
+    patch "/dashboard/:id" => "dashboard#update"
+    resources :server
   end
 
   resources :servers, except: [:show]
