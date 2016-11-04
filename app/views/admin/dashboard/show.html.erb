@@ -1,3 +1,5 @@
 <h1>Admin Dashboard</h1>
 
 <p>Name: <%= current_user.name %></p>
+
+<%= button_to "Edit Admin Account", admin_path(current_user), class:"btn btn-default" %>
