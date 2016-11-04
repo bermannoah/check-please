@@ -27,16 +27,16 @@ class Ticket < ApplicationRecord
   end
 
   def update_quantity(item_id, quantity)
-    @contents[item_id.to_s] = quantity
+    @contents[item_id.to_s] = quantity.to_i
     delete(item_id.to_s) if quantity.to_s == "0"
   end
 
   def total
-    items.reduce(0) {|sum, (item,quantity)| sum += item.price*quantity}
+    items.reduce(0) {|sum, (item,quantity)| sum += item.price*quantity.to_f}
   end
 
   def create_order_items(order_id)
-    items.each {|item,quantity| quantity.times {OrderItem.create(item_id:item.id, order_id:order_id)}}
+    items.each {|item,quantity| quantity.to_i.times {OrderItem.create(item_id:item.id, order_id:order_id)}}
   end
 
 end

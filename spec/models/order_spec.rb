@@ -55,7 +55,7 @@ RSpec.describe Order, type: :model do
       order_item_2 = OrderItem.create(order: order, item: item_1)
       order_item_3 = OrderItem.create(order: order, item: item_2)
 
-      expect(order.prep_for_show).to eq([[item_1.name, 2, (item_1.price * 2)], [item_2.name, 1, item_2.price]])
+      expect(order.prep_for_show).to eq([[item_1, 2, (item_1.price * 2)], [item_2, 1, item_2.price]])
       
     end
   end

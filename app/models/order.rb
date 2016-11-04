@@ -10,7 +10,7 @@ class Order < ApplicationRecord
   def prep_for_show
     grouped_items = items.group_by {|item| item.id}
     a = grouped_items.reduce([]) do |array, (quantity, item) |
-      array << [item.first.name, item.count, (item.first.price * item.count)]
+      array << [item.first, item.count, (item.first.price * item.count)]
       array
     end
   end
