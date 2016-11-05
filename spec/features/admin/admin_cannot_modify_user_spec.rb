@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "admin logs in" do
-  scenario "they the edit button" do
+  scenario "then they click edit button" do
     log_in_admin
 
     expect(page).to have_content("Admin Dashboard")
@@ -15,6 +15,8 @@ describe "admin logs in" do
 
     fill_in "server[name]", with: "Noah"
     fill_in "server[username]", with: "bermannoah"
+    fill_in "server[password]", with: @admin.password
+    fill_in "server[password_confirmation]", with: @admin.password
 
     click_on "Update"
 
