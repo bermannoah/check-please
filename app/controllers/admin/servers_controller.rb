@@ -15,8 +15,8 @@ class Admin::ServersController < ApplicationController
 
   def update
     @admin = Server.find(params[:id])
-    @admin.update(admin_server_params)
-    if @admin.save
+
+    if @admin.update(admin_server_params)
       flash[:success] = "Your account data has been updated!"
       redirect_to admin_dashboard_path
     else
@@ -31,6 +31,6 @@ private
   end
 
   def admin_server_params
-    params.require(:server).permit(:name, :username, :password, :password_confirmation)
+    params.require(:server).permit(:name, :username, :server_id, :password, :password_confirmation)
   end
 end
