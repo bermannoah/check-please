@@ -24,13 +24,13 @@
               </button>
               <a class="brand-logo navbar-brand" href="/">Check Please!</a>
             </div>
-
+            
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="login-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
 
                 <% if logged_in? %>
-                  <li><p>Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
+                  <li><p class="logged-in-text-style">Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
                 <% else %>
                   <a type="button" href="/login" class="btn btn-default navbar-btn login-button-margin">Login</a>
                 <% end %>
@@ -43,7 +43,6 @@
       </div>
       <br/>
       <br/>
-
       <div>
         <nav class="navbar navbar-default navbar-fixed-top menu-nav">
           <div class="container-fluid">
@@ -61,7 +60,7 @@
             <div class="collapse navbar-collapse" id="menu-navbar-collapse-2">
               <ul class="nav navbar-nav menu-nav-selectors">
                 <% @categories.each do |category| %>
-                <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name) %> </li>
+                <li class="menu-nav-selectors"> <%= link_to category.name, category_name_path(category.name.parameterize) %> </li>
                 <% end %>
                 <%= link_to tickets_path, id: "ticket" do %>
                   <button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart glyphicon-button-fix"><span class="ticket-button-font" id="navbar-ticket">Ticket</span></button>
