@@ -16,7 +16,12 @@
     </tr>
     <tr>
       <td></td>
-      <td>Order Created At:</td>
+      <td>Order Created At: </td>
       <td><%= @order.created_at %></td>
     </tr>
+    <% if @order.completed_or_cancelled?%>
+    <tr>
+        <td>Order was <%=@order.status=%> at <%=@order.updated_at%></td>
+    </tr>
+    <% end %>
 </table>

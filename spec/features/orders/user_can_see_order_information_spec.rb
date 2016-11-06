@@ -31,10 +31,4 @@ feature "order status" do
   it "user can see order total on the order show page" do
     expect(page).to have_content(@order.total)
   end
-
-  it "it shows the time and date if it was cancelled" do
-    @order.update_attributes(status:"cancelled")
-    expect(@order.status).to eq("cancelled")
-    expect(page).to have_content("Order was #{@order.status} at #{@order.updated_at}")
-  end
 end
