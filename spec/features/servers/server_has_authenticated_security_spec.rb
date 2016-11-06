@@ -66,4 +66,5 @@ describe "unregistered server does not have authenticated security" do
 
     expect(page).to have_content("The page you were looking for doesn't exist (404)")
   end
+
 end
