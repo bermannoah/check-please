@@ -5,14 +5,14 @@ RSpec.describe Order, type: :model do
     context "invalid attributes" do
       it "cannot be created without a total" do
         server = create(:server)
-        order = Order.new(server_id: server.id, paid?: true)
+        order = Order.new(server_id: server.id)
 
         expect(order).to be_invalid
       end
-      
+
       it "cannot be created without a server id" do
         server = create(:server)
-        order = Order.new(total: 1000, paid?: true)
+        order = Order.new(total: 1000)
 
         expect(order).to be_invalid
       end
@@ -39,14 +39,14 @@ RSpec.describe Order, type: :model do
 
       expect(order).to respond_to(:order_items)
     end
-    
+
     it "has many items" do
       order = create(:order_with_server)
 
       expect(order).to respond_to(:items)
     end
   end
-  
+
   describe "methods" do
     it "is able to prep lines for show" do
       order = create(:order_with_server)
@@ -56,7 +56,7 @@ RSpec.describe Order, type: :model do
       order_item_3 = OrderItem.create(order: order, item: item_2)
 
       expect(order.prep_for_show).to eq([[item_1, 2, (item_1.price * 2)], [item_2, 1, item_2.price]])
-      
+
     end
   end
 end
