@@ -1,3 +1,55 @@
 <h1>Admin Dashboard</h1>
 
 <p>Name: <%= current_user.name %></p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class='col-md-4'>
+      <h3 class='header'>Servers</h3>
+      <table class="admin-tables">
+        <thead>
+          <tr><th>Server</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <% @servers.each do |server|%>
+          <tr>
+              <td><%= server.name %></td>
+              <td><%= server.role %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table></br>
+    </div>
+
+    <div class='col-md-4'>
+      <h3 class="header">Orders</h3>
+      <table class="admin-tables">
+        <thead>
+          <tr><th>ID</th><th>Server</th></tr>
+        </thead>
+        <% @orders.each do |order|%>
+        <tr>
+            <td><%= order.id %></td>
+            <td><%= order.server.name %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table></br>
+    </div>
+
+    <div class='col-md-4'>
+      <h3 class="header">Items</h3>
+      <table class="admin-tables">
+        <tr><th>Name</th><th>Price</th><th>Category</th></tr>
+        <% @items.each do |item|%>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= number_to_currency(item.price, :unit => "$") %></td>
+            <td><%= item.category.name %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
