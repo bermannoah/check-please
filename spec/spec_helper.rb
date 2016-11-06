@@ -99,3 +99,13 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def log_in_admin
+  @admin = create(:admin)
+
+  visit login_path
+
+  fill_in "username", with: @admin.username
+  fill_in "password", with: @admin.password
+  click_button "Login"
+end
