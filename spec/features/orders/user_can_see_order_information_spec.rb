@@ -33,7 +33,8 @@ feature "order status" do
   end
 
   it "it shows the time and date if it was cancelled" do
-    
-
+    @order.update_attributes(status:"cancelled")
+    expect(@order.status).to eq("cancelled")
+    expect(page).to have_content("Order was #{@order.status} at #{@order.updated_at}")
   end
 end
