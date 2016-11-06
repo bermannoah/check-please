@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "server has authenticated security" do
+describe "registered server has authenticated security" do
   it "server cannot view another server's order" do
     server_1, server_2 = create_list(:server, 2)
     item_1, item_2 = create_list(:item_with_category, 2)
@@ -17,7 +17,53 @@ describe "server has authenticated security" do
     visit orders_path
     expect(page).to have_content ("Order #{server_order_1.id}")
     expect(page).not_to have_content ("Order #{server_order_2.id}")
+  end
 
+  it "server cannot view admin screen or use admin functionality" do
+    server = create(:server)
+    page.set_rack_session(server_id: server.id)
 
+    visit admin_dashboard_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist (404)")
+  end
+
+  # it "server cannot make self admin" do
+  #   pending
+  # end
+end
+
+describe "unregistered server does not have authenticated security" do
+  it "unregistered server cannot view another server's order" do
+    server = create(:server)
+    item= create(:item_with_category)
+    category = item.category
+    order = Order.create(server: server, total:(item.price))
+    order_item = OrderItem.create(item: item, order: order)
+    server_order = server.orders.first
+
+    visit orders_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist (404)")
+  end
+
+  it "unregisterd server sees login or checkout form when trying to submit ticket" do
+    server = create(:server)
+    item= create(:item_with_category)
+    category = item.category
+
+    visit menu_path
+    click_link "#{category.name}"
+    page.find("#ticket").click
+
+    expect(page).to have_button("Login")
+    expect(page).to have_button("Create Account")
+    expect(page).not_to have_button("Submit Ticket")
+  end
+
+  it "unregistered server cannot view admin screen or use admin functionality" do
+    visit admin_dashboard_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist (404)")
   end
 end

@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :require_log_in
 
   def index
     @server = Server.find(session[:server_id])
@@ -29,5 +30,9 @@ class OrdersController < ApplicationController
 
   def create_order_items(order_id)
     @ticket.create_order_items(order_id)
+  end
+
+  def require_log_in
+    render file: '/public/404' unless logged_in?
   end
 end
