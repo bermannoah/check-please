@@ -31,6 +31,6 @@ private
   end
 
   def admin_server_params
-    params.require(:server).permit(:name, :username, :server_id, :password, :password_confirmation)
+    params.require(:server).permit(:name, :username, :role, :password, :password_confirmation)
   end
 end

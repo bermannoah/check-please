@@ -14,11 +14,12 @@
         </thead>
         <tbody>
           <% @servers.each do |server|%>
-          <tr>
+          <tr id="server_<%= server.id %>">
               <td><%= server.name %></td>
               <td>
                 <%= form_for server, url: admin_server_path(server) do |f| %>
-                  <%= f.collection_select :id, Server.all, :id, :role %>
+                  <%= f.collection_select :role, @servers, :role, :role, {:id=>'server-dropdown'}  %>
+
               </td>
               <td>
                 <%= f.submit "Update", class: "btn btn-info" %>
@@ -62,6 +63,3 @@
     </div>
   </div>
 </div>
-
-
->>>>>>> b7e0a3ba1139aa972891bc1bbc53ecded6d6945f

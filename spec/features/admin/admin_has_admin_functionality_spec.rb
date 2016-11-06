@@ -12,8 +12,18 @@ describe "admin has admin funcionality" do
     expect(page).to have_content server.name
     expect(page).to have_content admin.name
 
-    find(:xpath, '//option[contains(text(), "Admin")]').select_option
+    within("#server_#{server.id}") do
+      expect(page).to have_select("server_role", options: [server.role, admin.role])
+    end
 
-    
+    within("#server_#{server.id}") do
+      select "admin", :from => "server_role"
+      click_on "Update"
+    end
+
+    within("#server_#{server.id}") do
+      expect(page).to_not have_select("server_role", options: [server.role])
+    end
+
   end
 end
