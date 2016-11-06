@@ -56,6 +56,12 @@ body {
   padding: 1px;
 }
 
+.logged-in-text-style {
+  color: #fff;
+  margin-top: 1.3rem;
+  margin-right: 2rem;
+}
+
 
 /* this overrides bootstrap's navbar float css */
 @media (min-width: 768px) {
@@ -74,4 +80,35 @@ body {
 
 .jumbotron {
   margin: 5rem;
+}
+
+table.admin-tables {
+   display: table;
+   width: 60%;
+   font-size: 20px;
+   margin: 0px auto;
+}
+
+table.admin-tables thead, table.admin-tables tbody {
+   float: left;
+   width: 100%;
+}
+table.admin-tables tbody {
+   overflow: auto;
+   height: 400px;
+}
+table.admin-tables tr {
+   width: 100%;
+   display: table;
+   text-align: left;
+}
+table.admin-tables th, table.admin-tables td {
+   width: 80%;
+   padding: 5px;
+}
+
+table.admin-tables th {
+   border-bottom: 1px dotted black;
+   font-size: 24px;
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }

@@ -1,8 +1,4 @@
 class ServersController < ApplicationController
-  def index
-
-  end
-
   def new
     @server = Server.new
   end
@@ -21,15 +17,6 @@ class ServersController < ApplicationController
 
   def show
     @server = Server.find(session[:server_id])
-  end
-
-  def update
-  end
-
-  def delete
-  end
-
-  def edit
   end
 
   private

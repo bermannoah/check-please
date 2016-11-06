@@ -1,10 +1,27 @@
-<h3><%= link_to "Order #{@order.id}", order_path(@order) %></h3>
+<h3><%= link_to "Order #{@order.id}", order_path(@order) %> : <%= @order.status.capitalize %></h3>
 
 <table>
   <tr> <th>Item</th> <th>Quantity</th> <th>Subtotal</th></tr>
     <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
     <tr>
-      <td><%= link_to item.name, item_path(item.id) %></td><td><%= quantity %></td><td><%= subtotal %></td>
+      <td><%= link_to item.name, item_path(item.id) %></td>
+      <td><%= quantity %></td>
+      <td><%= number_to_currency(subtotal, :unit => "$") %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td><%= number_to_currency(@order.total, :unit => "$") %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Order Created At: </td>
+      <td><%= @order.created_at %></td>
+    </tr>
+    <% if @order.completed_or_cancelled?%>
+    <tr>
+        <td>Order was <%=@order.status=%> at <%=@order.updated_at%></td>
     </tr>
     <% end %>
 </table>

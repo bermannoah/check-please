@@ -62,7 +62,7 @@ RSpec.describe Ticket, type: :model do
         ticket = Ticket.new({})
         item_1 = create(:item_with_category)
         ticket.add_item(item_1.id)
-        order = Order.create(server:server, total:ticket.total, paid?: false)
+        order = Order.create(server:server, total:ticket.total)
 
         ticket.create_order_items(order.id)
 
