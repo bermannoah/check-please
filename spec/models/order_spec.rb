@@ -59,4 +59,15 @@ RSpec.describe Order, type: :model do
 
     end
   end
+
+  describe "#completed_or_canceled?" do
+    it "returns true if it was completed" do
+      order = create(:order_with_server)
+      order.update_attributes(status:"completed")
+
+      expect(order.status).to eq("completed")
+      expect(order.completed_or_canceled?).to eq(true)
+
+    end
+  end
 end
