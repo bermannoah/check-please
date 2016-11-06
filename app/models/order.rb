@@ -15,4 +15,8 @@ class Order < ApplicationRecord
       array
     end
   end
+
+  def completed_or_cancelled?
+    true ? self.status == "completed" || self.status == "cancelled" : false
+  end
 end
