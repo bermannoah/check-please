@@ -40,7 +40,7 @@
         </thead>
         <% @orders.each do |order|%>
         <tr>
-            <td><%= order.id %></td>
+            <td><%= link_to order.id, get_order_path(order) %></td>
             <td><%= order.server.name %></td>
         </tr>
         <% end %>
