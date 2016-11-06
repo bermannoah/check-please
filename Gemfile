@@ -42,7 +42,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'binding_of_caller' #noahs
   gem 'shoulda-matchers' #noahs
-  # gem 'rack_session_access'
+  gem 'rack_session_access'
 
   gem 'byebug', platform: :mri
 end
