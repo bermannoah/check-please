@@ -35,8 +35,16 @@
     <div class='col-md-4'>
       <h3 class="header">Orders</h3>
       <table class="admin-tables">
-        <th>ordered</th><th>cancelled</th><th>paid</th><th>completed</th>
-        <%  %>
+        <tr>
+          <% @order.statuses.each do |status| %>
+          <th> <%= status %></th>
+          <% end %>
+        </tr>
+        <tr>
+          <% @order.status_count.each do |status_id, count| %>
+          <td> <%= count %> </td>
+          <% end %>
+        </tr>
       </table>
       <table class="admin-tables">
         <thead>

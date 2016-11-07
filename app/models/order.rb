@@ -19,4 +19,12 @@ class Order < ApplicationRecord
   def completed_or_cancelled?
     true ? self.status == "completed" || self.status == "cancelled" : false
   end
+
+  def statuses
+    [:ordered, :paid, :cancelled, :completed]
+  end
+
+  def status_count
+    Order.group(:status).count
+  end
 end

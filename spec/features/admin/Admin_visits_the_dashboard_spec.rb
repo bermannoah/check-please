@@ -7,6 +7,7 @@ RSpec.feature "admin views the individual order" do
     @item_1, @item_2 = create_list(:item_with_category, 2)
     @order_1 = Order.create(server:@server, total:(@item_1.price + @item_2.price), status:"ordered")
     @order_2 = Order.create(server:@server, total:(@item_1.price + @item_2.price), status:"paid")
+    @order_two_point_five = Order.create(server:@server, total:(@item_1.price + @item_2.price), status:"paid")
     @order_3 = Order.create(server:@server, total:(@item_1.price + @item_2.price), status:"cancelled")
     @order_4 = Order.create(server:@server, total:(@item_1.price + @item_2.price), status:"completed")
     @order_items_1 = OrderItem.create(item:@item_1, order:@order)
@@ -21,6 +22,10 @@ RSpec.feature "admin views the individual order" do
     expect(page).to have_content("paid")
     expect(page).to have_content("cancelled")
     expect(page).to have_content("completed")
-    
+
+    expect(page).to have_content("1")
+    expect(page).to have_content("2")
+    expect(page).to have_content("1")
+    expect(page).to have_content("1")
   end
 end
