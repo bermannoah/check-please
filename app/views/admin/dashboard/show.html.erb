@@ -46,18 +46,9 @@
           <% end %>
         </tr>
       </table>
-      <table class="admin-tables">
-        <thead>
-          <tr><th>ID</th><th>Server</th></tr>
-        </thead>
-        <% @orders.each do |order|%>
-        <tr>
-            <td><%= link_to order.id, get_order_path(order) %></td>
-            <td><%= order.server.name %></td>
-        </tr>
-        <% end %>
-        </tbody>
-      </table></br>
+
+      <%= render partial: "order_list" %>
+      
     </div>
 
     <div class='col-md-4'>

@@ -37,7 +37,5 @@ RSpec.feature "admin views the individual order" do
     expect(page).to have_content(@item_2.price)
     expect(page).to have_content(1)
     expect(page).to have_content(1)
-
-
   end
 end
