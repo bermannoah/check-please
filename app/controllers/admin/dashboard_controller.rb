@@ -6,7 +6,6 @@ class Admin::DashboardController < ApplicationController
     @servers = Server.all
     @orders = Order.all
     @order = Order.new
-    # binding.pry
     @items = Item.all
   end
 

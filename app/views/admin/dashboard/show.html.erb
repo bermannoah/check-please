@@ -46,9 +46,20 @@
           <% end %>
         </tr>
       </table>
+    <br>
+    <br>
 
-      <%= render partial: "order_list" %>
-      
+      <%# form_tag(path, method: "post", multipart: true) do %>
+      <%= form_tag(admin_server_path(@admin)) do %>
+          <%= collection_select :order, :status, Order.all, :status, :statuses %>
+          <%= submit_tag "Submit" %>
+      <% end %>
+
+      <div class="order_partial">
+
+        <%= render partial: "order_list" %>
+      </div>
+
     </div>
 
     <div class='col-md-4'>
