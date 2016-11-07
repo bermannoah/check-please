@@ -2,10 +2,11 @@
 <h5> Ordered by: <%= @order.server.name %></h5>
 <h5> Username: <%= @order.server.username %> </h5>
 <table class="admin-tables">
-  <tr> <th>Item</th> <th>Quantity</th> <th>Subtotal</th></tr>
+  <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
     <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
     <tr>
       <td><%= link_to item.name, item_path(item.id) %></td>
+      <td><%= number_to_currency(item.price, :unit =>"$")%></td>
       <td><%= quantity %></td>
       <td><%= number_to_currency(subtotal, :unit => "$") %></td>
     </tr>
