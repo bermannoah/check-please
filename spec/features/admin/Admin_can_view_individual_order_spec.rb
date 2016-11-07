@@ -18,4 +18,11 @@ RSpec.feature "admin views the individual order" do
     expect(current_path).to eq(get_order_path(@order.id))
     expect(page).to have_content(@order.created_at)
   end
+
+  it "they can see the servers email address" do
+    click_link "#{@order.id}"
+
+    expect(page).to have_content(@server.name)
+    expect(page).to have_content(@server.username)
+  end
 end
