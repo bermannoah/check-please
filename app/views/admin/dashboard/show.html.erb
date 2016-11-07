@@ -49,13 +49,12 @@
     <br>
     <br>
 
-      <%= form_tag(admin_dashboard_path, method: "get") do %>
-          <%= collection_select :order, :status, @orders, :status, :status %>
-          <%= submit_tag "Submit" %>
-      <% end %>
 
       <div class="order_partial">
-
+        <%= form_tag(admin_dashboard_path, method: "get") do %>
+          <%= collection_select :order, :status, @orders, :status, :status, {:id=>'status-dropdown'} %>
+          <%= submit_tag "Submit" %>
+        <% end %>
         <%= render partial: "order_list" %>
       </div>
 

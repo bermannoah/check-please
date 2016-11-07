@@ -7,7 +7,7 @@ class Admin::DashboardController < ApplicationController
     @orders = Order.all
     @order = Order.new
     @items = Item.all
-    @status = params[:order][:status] if @status = params[:order][:status]
+    @status = params[:order][:status] if @status = params[:order]
   end
 
 private
