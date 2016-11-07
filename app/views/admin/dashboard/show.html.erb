@@ -49,9 +49,8 @@
     <br>
     <br>
 
-      <%# form_tag(path, method: "post", multipart: true) do %>
-      <%= form_tag(admin_server_path(@admin)) do %>
-          <%= collection_select :order, :status, Order.all, :status, :statuses %>
+      <%= form_tag(admin_dashboard_path, method: "get") do %>
+          <%= collection_select :order, :status, @orders, :status, :status %>
           <%= submit_tag "Submit" %>
       <% end %>
 
