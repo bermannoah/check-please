@@ -22,16 +22,10 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if cancelled
-      order = Order.find(params[:id])
-      order.update_attributes(status: cancelled)
-    elsif completed
-      order = Order.find(params[:id])
-      order.update_attributes(status: completed)
-    elsif paid
-      order = Order.find(params[:id])
-      order.update_attributes(status: paid)
-    end
+    order = Order.find(params[:id])
+    order.update_attributes(status: cancelled) if cancelled
+    order.update_attributes(status: completed) if completed
+    order.update_attributes(status: paid)      if paid
     redirect_to admin_dashboard_path
   end
 
@@ -51,14 +45,14 @@ class OrdersController < ApplicationController
   end
 
   def cancelled
-    return "cancelled" if params[:format] == "cancelled"
+    return "cancelled" if params[:status] == "cancelled"
   end
 
   def completed
-    return "completed" if params[:format] == "completed"
+    return "completed" if params[:status] == "completed"
   end
 
   def paid
-    return "paid" if params[:format] == "paid"
+    return "paid" if params[:status] == "paid"
   end
 end

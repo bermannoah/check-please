@@ -1,6 +1,6 @@
 <h1>Admin Dashboard</h1>
 
-<%= link_to "Edit Admin Account", edit_admin_server_path(@admin), class:"btn btn-default" %>
+<%= link_to "Edit Admin Account", edit_admin_server_path(@dashboard.admin), class:"btn btn-default" %>
 
 <p>Name: <%= current_user.name %></p>
 
@@ -13,12 +13,12 @@
           <tr><th>Server</th><th>Role</th></tr>
         </thead>
         <tbody>
-          <% @servers.each do |server|%>
+          <% @dashboard.servers.each do |server|%>
           <tr id="server_<%= server.id %>">
               <td><%= server.name %></td>
               <td>
                 <%= form_for server, url: admin_server_path(server) do |f| %>
-                  <%= f.collection_select :role, @servers, :role, :role, {:id=>'server-dropdown'}  %>
+                  <%= f.collection_select :role, @dashboard.servers, :role, :role, {:id=>'server-dropdown'}  %>
 
               </td>
               <td>
@@ -36,12 +36,12 @@
       <h3 class="header">Orders</h3>
       <table class="admin-tables">
         <tr>
-          <% @order.statuses.each do |status| %>
+          <% @dashboard.order.statuses.each do |status| %>
           <th> <%= status %></th>
           <% end %>
         </tr>
         <tr>
-          <% @order.status_count.each do |status_id, count| %>
+          <% @dashboard.order.status_count.each do |status_id, count| %>
           <td> <%= count %> </td>
           <% end %>
         </tr>
@@ -52,7 +52,7 @@
 
       <div class="order_partial">
         <%= form_tag(admin_dashboard_path, method: "get") do %>
-          <%= collection_select :order, :status, @orders, :status, :status, {:id=>'status-dropdown'} %>
+          <%= collection_select :order, :status, @dashboard.orders, :status, :status, {:id=>'status-dropdown'} %>
           <%= submit_tag "Submit" %>
         <% end %>
         <%= render partial: "order_list" %>
@@ -64,7 +64,7 @@
       <h3 class="header">Items</h3>
       <table class="admin-tables">
         <tr><th>Name</th><th>Price</th><th>Category</th></tr>
-        <% @items.each do |item|%>
+        <% @dashboard.items.each do |item|%>
         <tr>
             <td><%= item.name %></td>
             <td><%= number_to_currency(item.price, :unit => "$") %></td>
