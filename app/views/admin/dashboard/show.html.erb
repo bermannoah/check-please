@@ -1,10 +1,8 @@
 <h1>Admin Dashboard</h1>
 
-
 <%= link_to "Edit Admin Account", edit_admin_server_path(@admin), class:"btn btn-default" %>
 
 <p>Name: <%= current_user.name %></p>
-
 
 <div class="container-fluid">
   <div class="row">
@@ -16,11 +14,20 @@
         </thead>
         <tbody>
           <% @servers.each do |server|%>
-          <tr>
+          <tr id="server_<%= server.id %>">
               <td><%= server.name %></td>
-              <td><%= server.role %></td>
+              <td>
+                <%= form_for server, url: admin_server_path(server) do |f| %>
+                  <%= f.collection_select :role, @servers, :role, :role, {:id=>'server-dropdown'}  %>
+
+              </td>
+              <td>
+                <%= f.submit "Update", class: "btn btn-info" %>
+              </td>
+              <% end %>
           </tr>
           <% end %>
+
         </tbody>
       </table></br>
     </div>
@@ -28,17 +35,29 @@
     <div class='col-md-4'>
       <h3 class="header">Orders</h3>
       <table class="admin-tables">
-        <thead>
-          <tr><th>ID</th><th>Server</th></tr>
-        </thead>
-        <% @orders.each do |order|%>
         <tr>
-            <td><%= order.id %></td>
-            <td><%= order.server.name %></td>
+          <% @order.statuses.each do |status| %>
+          <th> <%= status %></th>
+          <% end %>
         </tr>
+        <tr>
+          <% @order.status_count.each do |status_id, count| %>
+          <td> <%= count %> </td>
+          <% end %>
+        </tr>
+      </table>
+    <br>
+    <br>
+
+
+      <div class="order_partial">
+        <%= form_tag(admin_dashboard_path, method: "get") do %>
+          <%= collection_select :order, :status, @orders, :status, :status, {:id=>'status-dropdown'} %>
+          <%= submit_tag "Submit" %>
         <% end %>
-        </tbody>
-      </table></br>
+        <%= render partial: "order_list" %>
+      </div>
+
     </div>
 
     <div class='col-md-4'>
@@ -56,6 +75,3 @@
     </div>
   </div>
 </div>
-
-
->>>>>>> b7e0a3ba1139aa972891bc1bbc53ecded6d6945f
