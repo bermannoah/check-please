@@ -13,6 +13,7 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   
   config.paperclip_defaults = {
+  :s3_host_name => 's3-us-west-2.amazonaws.com',
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
@@ -21,7 +22,7 @@ Rails.application.configure do
     s3_region: ENV.fetch('AWS_REGION'),
     }
   }
-  
+    
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true

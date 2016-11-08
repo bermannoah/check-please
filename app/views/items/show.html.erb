@@ -4,7 +4,8 @@
     <tr>
       <td><%= @item.name %></td>
       <td><%= @item.price %></td>
-      <td><%= image_tag @item.avatar.url(:medium) %></td>
+      
+      <td><%= image_tag @item.avatar.url %></td>
 
       <% if @item.retired == "N" %>
         <td><%= button_to "Add to Ticket", create_ticket_path(item_id: @item.id), class: "btn btn-success" %></td>
