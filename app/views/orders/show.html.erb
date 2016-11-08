@@ -1,8 +1,13 @@
 <h3><%= link_to "Order #{@order.id}", order_path(@order) %> : <%= @order.status.capitalize %></h3>
 <h5> Ordered by: <%= @order.server.name %></h5>
 <h5> Username: <%= @order.server.username %> </h5>
-<table class="admin-tables">
-  <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
+
+
+<table class="admin-tables jumbotron table-hover table-round">
+  <thead>
+    <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
+  </thead>
+  <tbody>
     <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
     <tr>
       <td><%= link_to item.name, item_path(item.id) %></td>
@@ -26,4 +31,5 @@
         <td>Order was <%=@order.status=%> at <%=@order.updated_at%></td>
     </tr>
     <% end %>
+  </tbody>
 </table>

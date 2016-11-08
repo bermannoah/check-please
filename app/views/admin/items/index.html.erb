@@ -1,0 +1,11 @@
+<h1>All Items:</h1>
+<table>
+  <tr> <th>Name</th> <th>Price</th></tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+      <%= image_tag item.avatar.url(:square) %>
+    </tr>
+  <% end  %>
+</table>
