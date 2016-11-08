@@ -36,7 +36,7 @@
                 <% end %>
 
                 <% if current_admin? %>
-                  <li><%= link_to "Admin Dashboard", admin_dashboard_path, class: "btn btn-default btn-md" %></li>
+                  <%= link_to "Admin Dashboard", admin_dashboard_path, class: "admin-dashboard-button btn btn-default" %>
                 <% end %>
                     
               </ul>
