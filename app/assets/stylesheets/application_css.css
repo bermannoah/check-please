@@ -99,7 +99,7 @@ table.admin-tables tbody {
 }
 table.admin-tables tr {
    width: 100%;
-   display: table;
+   /*display: table;*/
    text-align: left;
 }
 table.admin-tables th, table.admin-tables td {

@@ -1,0 +1,20 @@
+<table class="admin-tables">
+  <thead>
+    <tr><th>ID</th><th>Server</th><th>Status</th><th></th><th></th></tr>
+  </thead>
+  <% @status_order.each do |order| %>
+    <tr id="order_<%=order.id%>">
+      <td><%= link_to order.id, get_order_path(order) %></td>
+      <td><%= order.server.name %></td>
+      <td><%= order.status %></td>
+      <% if order.status == "paid" %>
+        <td><%= button_to "Cancel", edit_order_path(order, status: :cancelled), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Mark As Completed", edit_order_path(order, status: :completed), method: "patch", class:"btn btn-danger" %></td>
+      <% elsif order.status == "ordered" %>
+        <td><%= button_to "Cancel", edit_order_path(order, status: :cancelled), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Mark As Paid", edit_order_path(order, status: :paid), method: "patch", class:"btn btn-danger" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table></br>
