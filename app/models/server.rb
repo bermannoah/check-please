@@ -9,4 +9,7 @@ class Server < ApplicationRecord
 
   enum role: [:default, :admin]
   has_many :orders
+
+
+
 end

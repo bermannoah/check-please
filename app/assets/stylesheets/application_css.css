@@ -99,33 +99,57 @@ body {
 
 /* custom admin table styling */
 
-table.admin-tables {
+.admin-tables {
    display: table;
    width: 60%;
    font-size: 20px;
    margin: 0px auto;
 }
 
-table.admin-tables thead, table.admin-tables tbody {
+.admin-tables thead, .admin-tables tbody {
    float: left;
    width: 100%;
 }
-table.admin-tables tbody {
+.admin-tables tbody {
    overflow: auto;
    height: 400px;
 }
-table.admin-tables tr {
+.admin-tables tr {
    width: 100%;
    /*display: table;*/
    text-align: left;
 }
-table.admin-tables th, table.admin-tables td {
+.admin-tables th, .admin-tables td {
    width: 80%;
    padding: 5px;
 }
 
-table.admin-tables th {
+.admin-tables th {
    border-bottom: 1px dotted black;
    font-size: 24px;
    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.table-round {
+    border: none;
+}
+.table-round thead th {
+    border: none;
+    text-shadow: 1px 1px 1px #ccc;
+    color: #333;
+}
+.table-round thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.table-round thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.table-round tbody td {
+    border: none;
+}
+.table-round tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.table-round tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
 }

@@ -18,8 +18,7 @@
               <td><%= server.name %></td>
               <td>
                 <%= form_for server, url: admin_server_path(server) do |f| %>
-                  <%= f.collection_select :role, @dashboard.servers, :role, :role, {:id=>'server-dropdown'}  %>
-
+                  <%= f.collection_select :role, @dashboard.roles, :role, :role, {:id=>'server-dropdown'}  %>
               </td>
               <td>
                 <%= f.submit "Update", class: "btn btn-info" %>
@@ -52,7 +51,7 @@
 
       <div class="order_partial">
         <%= form_tag(admin_dashboard_path, method: "get") do %>
-          <%= collection_select :order, :status, @dashboard.orders, :status, :status, {:id=>'status-dropdown'} %>
+          <%= collection_select :order, :status, @dashboard.unique_statuses, :status, :status, {:id=>'status-dropdown'} %>
           <%= submit_tag "Submit" %>
         <% end %>
         <%= render partial: "order_list" %>
