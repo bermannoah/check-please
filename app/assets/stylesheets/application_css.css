@@ -10,6 +10,10 @@ body {
   padding-top: 5em;
 }
 
+.table-font {
+  font-size: 2rem;
+}
+
 .center-content {
   text-align: center;
 }
@@ -24,10 +28,14 @@ body {
   margin-right: auto;
 }
 
-
 .brand-logo {
-  font-weight: bold;
   font-family: sans-serif, helvetica;
+  font-weight: bold;
+  color: #fff;
+}
+
+.orders-width {
+  width: 50%;
 }
 
 /* menu specific syling */
@@ -62,6 +70,11 @@ body {
   margin-right: 2rem;
 }
 
+.admin-dashboard-button {
+  margin: 5px;
+  margin-top: 7px;
+}
+
 
 /* this overrides bootstrap's navbar float css */
 @media (min-width: 768px) {
@@ -80,7 +93,11 @@ body {
 
 .jumbotron {
   margin: 5rem;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid black !important;
 }
+
+/* custom admin table styling */
 
 table.admin-tables {
    display: table;
