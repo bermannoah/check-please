@@ -10,6 +10,10 @@ body {
   padding-top: 5em;
 }
 
+.table-font {
+  font-size: 2rem;
+}
+
 .center-content {
   text-align: center;
 }
@@ -84,7 +88,11 @@ body {
 
 .jumbotron {
   margin: 5rem;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid black !important;
 }
+
+/* custom admin table styling */
 
 table.admin-tables {
    display: table;
