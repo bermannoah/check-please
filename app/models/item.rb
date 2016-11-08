@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  attr_accessor :avatar_file_name
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true
 

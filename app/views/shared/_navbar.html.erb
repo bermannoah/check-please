@@ -18,6 +18,7 @@
 
           <% if logged_in? %>
             <li><p class="logged-in-text-style">Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
+            <%= link_to "Orders", orders_path, class: "admin-dashboard-button btn btn-default" %>
           <% else %>
             <a type="button" href="/login" class="btn btn-default navbar-btn login-button-margin">Login</a>
           <% end %>
@@ -25,8 +26,7 @@
           <% if current_admin? %>
             <%= link_to "Admin Dashboard", admin_dashboard_path, class: "admin-dashboard-button btn btn-default" %>
           <% end %>
-
-          <%= link_to "Orders", orders_path, class: "admin-dashboard-button btn btn-default" %>
+          
 
         </ul>
       </div><!-- /.navbar-collapse -->
