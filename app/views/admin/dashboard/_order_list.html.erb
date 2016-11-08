@@ -8,11 +8,11 @@
       <td><%= order.server.name %></td>
       <td><%= order.status %></td>
       <% if order.status == "paid" %>
-        <td><%= button_to "Cancel", edit_order_path(order, :cancelled), method: "patch", class:"btn btn-danger" %></td>
-        <td><%= button_to "Mark As Completed", edit_order_path(order, :completed), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Cancel", edit_order_path(order, status: :cancelled), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Mark As Completed", edit_order_path(order, status: :completed), method: "patch", class:"btn btn-danger" %></td>
       <% elsif order.status == "ordered" %>
-        <td><%= button_to "Cancel", edit_order_path(order, :cancelled), method: "patch", class:"btn btn-danger" %></td>
-        <td><%= button_to "Mark As Paid", edit_order_path(order, :paid), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Cancel", edit_order_path(order, status: :cancelled), method: "patch", class:"btn btn-danger" %></td>
+        <td><%= button_to "Mark As Paid", edit_order_path(order, status: :paid), method: "patch", class:"btn btn-danger" %></td>
       <% end %>
     </tr>
   <% end %>
