@@ -28,13 +28,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="login-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-
+                
                 <% if logged_in? %>
                   <li><p class="logged-in-text-style">Logged in as <%= link_to current_user.username, dashboard_path %> | <%= link_to "Logout", logout_path, method: :delete %> </p></li>
                 <% else %>
                   <a type="button" href="/login" class="btn btn-default navbar-btn login-button-margin">Login</a>
                 <% end %>
 
+                <% if current_admin? %>
+                  <li><%= link_to "Admin Dashboard", admin_dashboard_path, class: "btn btn-default btn-md" %></li>
+                <% end %>
+                    
               </ul>
             </div><!-- /.navbar-collapse -->
 
