@@ -6,7 +6,7 @@
       <tr>
         <td><%= @item.name %></td>
         <td><%= @item.price %></td>
-        <% if item.avatar_file_name.nil? %>
+        <% if @item.avatar_file_name.nil? %>
         <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
         <% else %>
         <td><%= image_tag item.avatar.url(:square), class: "image-styles" %></td>
