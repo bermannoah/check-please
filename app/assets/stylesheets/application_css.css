@@ -26,8 +26,9 @@ body {
 
 
 .brand-logo {
-  font-weight: bold;
   font-family: sans-serif, helvetica;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* menu specific syling */
