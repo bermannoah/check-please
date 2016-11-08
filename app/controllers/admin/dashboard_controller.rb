@@ -2,10 +2,9 @@ class Admin::DashboardController < ApplicationController
   before_action :require_admin
 
   def show
-    @admin = Server.find(session[:server_id])
-    @servers = Server.all
-    @orders = Order.all
-    @items = Item.all
+    @dashboard = Dashboard.new
+    @dashboard.set_admin(session[:server_id])
+    @dashboard.set_status(params[:order][:status]) if params[:order]
   end
 
 private

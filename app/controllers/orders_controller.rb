@@ -21,6 +21,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    order = Order.find(params[:id])
+    order.update_attributes(status: cancelled) if cancelled
+    order.update_attributes(status: completed) if completed
+    order.update_attributes(status: paid)      if paid
+    redirect_to admin_dashboard_path
+  end
+
 
   private
 
@@ -34,5 +42,17 @@ class OrdersController < ApplicationController
 
   def require_log_in
     render file: '/public/404' unless logged_in?
+  end
+
+  def cancelled
+    return "cancelled" if params[:status] == "cancelled"
+  end
+
+  def completed
+    return "completed" if params[:status] == "completed"
+  end
+
+  def paid
+    return "paid" if params[:status] == "paid"
   end
 end

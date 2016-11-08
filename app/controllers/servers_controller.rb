@@ -1,4 +1,5 @@
 class ServersController < ApplicationController
+
   def new
     @server = Server.new
   end
@@ -18,6 +19,7 @@ class ServersController < ApplicationController
   def show
     @server = Server.find(session[:server_id])
   end
+
 
   private
 
