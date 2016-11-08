@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   patch "/orders/:id" => "orders#update", as: "edit_order"
   delete "/orders" => "orders#destroy", as: "order"
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :new, :create]
 
   get "/dashboard" => "servers#show"
 

@@ -7,7 +7,7 @@
 # Ignore bundler config.
 /.bundle
 
-.DS_Store
+/.DS_Store
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -16,3 +16,5 @@
 /coverage
 
 .byebug_history
+# Ignore application configuration
+/config/application.yml
