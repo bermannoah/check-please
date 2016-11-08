@@ -24,11 +24,14 @@ body {
   margin-right: auto;
 }
 
-
 .brand-logo {
   font-family: sans-serif, helvetica;
   font-weight: bold;
   color: #fff;
+}
+
+.orders-width {
+  width: 50%;
 }
 
 /* menu specific syling */
