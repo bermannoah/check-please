@@ -1,6 +1,6 @@
 <h1>All Orders</h1>
 
-  <div class="orders-width center-block">
+  <div class="orders-width center-block jumbotron">
     <table class="table-font table table-hover table-condensed">
       <tr><th class="center-content">Order</th><th class="center-content">Status</th></tr>
       <% @orders.each do |order| %>
@@ -8,6 +8,6 @@
           <td><%= link_to "Order #{order.id}", get_order_path(order.id) %></td>
           <td><%= order.status %></td>
         </tr>
-      <% end %> 
+      <% end %>
     </table>
   </div>
