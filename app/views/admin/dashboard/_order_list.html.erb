@@ -3,7 +3,7 @@
     <tr><th>ID</th><th>Server</th><th>Status</th><th></th><th></th></tr>
   </thead>
   <% @status_order.each do |order| %>
-    <tr>
+    <tr id="order_<%=order.id%>">
       <td><%= link_to order.id, get_order_path(order) %></td>
       <td><%= order.server.name %></td>
       <td><%= order.status %></td>
