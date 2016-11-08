@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104180035) do
+ActiveRecord::Schema.define(version: 20161108173832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,13 @@ ActiveRecord::Schema.define(version: 20161104180035) do
     t.string   "name"
     t.float    "price"
     t.integer  "category_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "retired",     default: "N"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "retired",             default: "N"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
@@ -42,8 +46,8 @@ ActiveRecord::Schema.define(version: 20161104180035) do
     t.integer  "server_id"
     t.float    "total"
     t.integer  "status",     default: 0
-    t.datetime "created_at", default: '2016-11-06 18:07:20', null: false
-    t.datetime "updated_at", default: '2016-11-06 18:07:20', null: false
+    t.datetime "created_at", default: '2016-11-06 18:01:45', null: false
+    t.datetime "updated_at", default: '2016-11-06 18:01:45', null: false
     t.index ["server_id"], name: "index_orders_on_server_id", using: :btree
   end
 
