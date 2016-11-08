@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/orders/:server_id' => 'orders#create', as: "create_order"
   get "/orders"  => "orders#index", as: "orders"
   get "/orders/:id" => "orders#show", as: "get_order"
+  patch "/orders/:id" => "orders#update", as: "edit_order"
   delete "/orders" => "orders#destroy", as: "order"
 
   resources :items, only: [:index, :show]

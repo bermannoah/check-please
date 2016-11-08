@@ -7,7 +7,10 @@ class Admin::DashboardController < ApplicationController
     @orders = Order.all
     @order = Order.new
     @items = Item.all
-    @status = params[:order][:status] if @status = params[:order]
+    @status = params[:order][:status] if params[:order]
+    params[:order] ?  @status_order = Order.where(status: @status) : @status_order = @orders
+    # @orders_with_status = Order.where(status: @status) if params[:order]
+
   end
 
 private
