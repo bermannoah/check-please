@@ -24,12 +24,7 @@ Rails.application.routes.draw do
     get "/dashboard" => "dashboard#show"
 
     resources :servers, only: [:edit, :update]
-
-    # get "/dashboard/:id" => "dashboard#edit"
-    # post "/dashboard/:id" => "dashboard#update"
-    # put "/dashboard/:id" => "dashboard#update"
-    # patch "/dashboard/:id" => "dashboard#update"
-    # resources :server
+    resources :items
   end
 
   resources :servers, except: [:show]
