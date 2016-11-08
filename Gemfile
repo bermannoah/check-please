@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rb-readline'
-
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'bootstrap-sass', '~>3.3.7'
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record

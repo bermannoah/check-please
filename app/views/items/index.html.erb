@@ -5,6 +5,7 @@
      <tr>
        <td><%= item.name %></td>
        <td><%= item.price %></td>
+       <%= image_tag item.avatar.url(:square) %>
      </tr>
    <% end  %>
  </table>
