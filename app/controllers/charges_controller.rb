@@ -1,13 +1,13 @@
 class ChargesController < ApplicationController
 
   def new
-    @order = Order.find_by(id: params[:id])
   end
 
   def create
     # Amount in cents
-    @order = Order.find_by(id: params[:id])
-    @amount = @order.total_in_cents
+    raw_total = session[:current_order_total]
+    @amount = (raw_total * 100).to_i
+    @total_display = raw_total
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'Mobile checkout customer',
       :currency    => 'usd'
     )
 
