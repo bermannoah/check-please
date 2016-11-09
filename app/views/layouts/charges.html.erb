@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <title>Check Please!</title>
+
+    <%= stylesheet_link_tag    'application_css', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
   <body>
-    <%= yield %>
+    <%= render partial: "shared/navbar" %>
+    
+    <% flash.each do |type, message| %>
+      <div class="center-content center-block container alert alert-<%= type %>"><%= message %>
+    <% end  %>
+      </div>
+    <div class="container center-content">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
