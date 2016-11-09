@@ -94,12 +94,21 @@ body {
 }
 
 .field-list {
-  padding-left: 13rem;
+  padding-left: 13.5rem;
+}
+
+.field-catg-list {
+  margin-left: -15% !important;
 }
 
 .field-list li {
   display: inline-block;
-  padding-left: 5%;
+  padding-left: 4.5%;
+}
+
+.field-catg-list li {
+  display: inline-block;
+  padding-left: 1%;
 }
 
 /* this overrides bootstrap's navbar float css */
@@ -123,12 +132,43 @@ body {
   border: 1px solid black !important;
 }
 
-
 .pseudotron {
   margin: 5rem;
   background: rgba(255, 255, 255, 0.7) !important;
   border: 1px solid black !important;
 }
+
+.btn-small {
+  font-size: 10px !important;
+  width: 60px;
+  height: 35px;
+  white-space: normal !important;
+  padding-bottom: 5% !important;
+  padding-right: 15px; !important;
+}
+
+.btn-padding {
+  margin-left: 2% !important;
+  margin-right: 2% !important;
+}
+
+#order_status {
+  margin-bottom: 5%;
+  font-size: 18px;
+}
+
+.admin-edit li {
+  display: inline-block;
+
+}
+
+.admin-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 5%;
+}
+
+
 /* custom admin table styling */
 
 .admin-tables {
@@ -142,10 +182,13 @@ body {
    float: left;
    width: 100%;
 }
-.admin-tables tbody {
-   overflow: auto;
-   height: 400px;
+.admin-tables-overflow tbody,
+.admin-div-overflow {
+   overflow-y: auto;
+   overflow-x: hidden !important;
+   height: 300px;
 }
+
 .admin-tables tr {
    width: 100%;
    text-align: left;
@@ -159,6 +202,21 @@ body {
    border-bottom: 1px dotted black;
    font-size: 24px;
    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.admin-tables-height tbody {
+  height: 255px !important;
+}
+
+.admin-table-orders {
+  margin-left: -12% !important;
+  margin-right: -10% !important;
+}
+
+.admin-table-orders th, .admin-table-orders td {
+  width: 80%;
+  padding: 5px;
+  font-size: 16px;
 }
 
 .table-orders thead, .table-orders tbody {

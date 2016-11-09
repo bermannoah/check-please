@@ -1,11 +1,20 @@
 <h1>All Items:</h1>
-<table>
-  <tr> <th>Name</th> <th>Price</th></tr>
-  <% @items.each do |item| %>
+
+<div class="jumbotron table-responsive">
+
+  <table class="table table-hover table-bticketed table-condensed table-font">
+    <tr> <th class="center-content">Name</th> <th class="center-content">Price</th> <th class="center-content">Image</th></tr>
+    <% @items.each do |item| %>
     <tr>
-      <td><%= item.name %></td>
-      <td><%= item.price %></td>
-      <%= image_tag item.avatar.url(:square) %>
+      <td><%= link_to item.name, edit_admin_item_path(item) %></td>
+      <td><%= number_to_currency(item.price, :unit => "$") %></td>
+      <% if item.avatar_file_name.nil? %>
+      <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
+      <% else %>
+      <td><%= image_tag item.avatar.url(:square), class: "image-styles" %></td>
+      <% end %>
     </tr>
-  <% end  %>
-</table>
+    <% end  %>
+  </table>
+
+</div>

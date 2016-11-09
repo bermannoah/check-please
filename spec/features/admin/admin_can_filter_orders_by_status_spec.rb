@@ -19,7 +19,7 @@ RSpec.feature "admin filters orders by status" do
 
   it "filters orders by status" do
     within ".order_partial" do
-       expect(page).to have_select("order_status", options: ["ordered", "paid", "cancelled", "completed"])
+       expect(page).to have_select("order_status", options: ["all", "paid", "completed", "ordered", "cancelled"])
     end
 
     within ".order_partial" do
