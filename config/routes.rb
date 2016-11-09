@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   delete "/orders" => "orders#destroy", as: "order"
 
   resources :items, only: [:index, :show, :new, :create]
-
+  resources :charges
+  
   get "/dashboard" => "servers#show"
 
   namespace :admin do

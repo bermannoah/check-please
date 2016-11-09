@@ -13,6 +13,8 @@ class OrdersController < ApplicationController
   def create
     server = Server.find(server_id)
     order = Order.new(server_id: server.id, total: @ticket.total )
+    session[:current_order_total] = order.total
+    session.delete :ticket
     if order.save
       create_order_items(order.id)
       redirect_to orders_path
