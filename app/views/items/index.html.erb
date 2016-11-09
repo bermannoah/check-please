@@ -1,21 +1,20 @@
- <h1>All Items:</h1>
+<h1>All Items:</h1>
  
- <div class="jumbotron table-responsive">
+<div class="jumbotron table-responsive">
    
-   <table class="table table-hover table-bticketed table-condensed table-font">
-     <tr> <th class="center-content">Name</th> <th class="center-content">Price</th> <th class="center-content">Image</th></tr>
-     <% @items.each do |item| %>
-     <tr>
-       <td><%= item.name %></td>
-       <td><%= item.price %></td>
-       <% if item.avatar_file_name.nil? %>
-       <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
-       <% else %>
-       <td><%= image_tag item.avatar.url(:square), class: "image-styles" %></td>
-       <% end %>
-     </tr>
-     <% end  %>
-   </table>
+  <table class="table table-hover table-bticketed table-condensed table-font">
+    <tr> <th class="center-content">Name</th> <th class="center-content">Price</th> <th class="center-content">Image</th></tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.price %></td>
+          <% if item.avatar_file_name.nil? %>
+            <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
+          <% else %>
+            <td><%= image_tag item.avatar.url(:square), class: "image-styles" %></td>
+          <% end %>
+        </tr>
+      <% end  %>
+  </table>
    
- </div>
- 
+</div>
