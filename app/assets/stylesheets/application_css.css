@@ -94,12 +94,21 @@ body {
 }
 
 .field-list {
-  padding-left: 13rem;
+  padding-left: 13.5rem;
+}
+
+.field-catg-list {
+  margin-left: -15% !important;
 }
 
 .field-list li {
   display: inline-block;
-  padding-left: 5%;
+  padding-left: 4.5%;
+}
+
+.field-catg-list li {
+  display: inline-block;
+  padding-left: 1%;
 }
 
 /* this overrides bootstrap's navbar float css */
@@ -139,7 +148,8 @@ body {
 }
 
 .btn-padding {
-  margin-bottom: 20px !important;
+  margin-left: 2% !important;
+  margin-right: 2% !important;
 }
 
 #order_status {
@@ -149,7 +159,7 @@ body {
 
 .admin-edit li {
   display: inline-block;
-  
+
 }
 
 .admin-name {

@@ -1,7 +1,8 @@
 <h1>Admin Dashboard</h1>
 
-<h3>Name: <%= current_user.name %></h3></br>  
-<%= link_to "Edit Admin Account", edit_admin_server_path(@dashboard.admin), class:"btn btn-default" %>
+<h3>Name: <%= current_user.name %></h3></br>
+<%= link_to "Edit Admin Account", edit_admin_server_path(@dashboard.admin), class:"btn btn-default btn-padding" %>
+<%= link_to "All Items", admin_items_path, class:"btn btn-default btn-padding" %>
 
 <div class="container-fluid">
   <div class="row">
@@ -34,7 +35,7 @@
       <table class="admin-tables admin-tables-overflow table-responsive">
         <tr><th>Name</th><th>Price</th><th>Category</th></tr>
         <% @dashboard.items.each do |item|%>
-        <tr>
+        <tr class="item_<%= item.id %>">
             <td><%= link_to item.name, edit_admin_item_path(item) %></td>
             <td><%= number_to_currency(item.price, :unit => "$") %></td>
             <td><%= item.category.name %></td>
