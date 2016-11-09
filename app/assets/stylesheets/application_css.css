@@ -140,7 +140,7 @@ body {
 
 .btn-small {
   font-size: 10px !important;
-  width: 70px;
+  width: 60px;
   height: 35px;
   white-space: normal !important;
   padding-bottom: 5% !important;
@@ -209,7 +209,7 @@ body {
 }
 
 .admin-table-orders {
-  margin-left: -10% !important;
+  margin-left: -12% !important;
   margin-right: -10% !important;
 }
 
