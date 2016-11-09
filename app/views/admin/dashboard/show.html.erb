@@ -56,10 +56,10 @@
 
     <div class='col-md-4 col-md-offset-1 jumbotron'>
       <h3 class="header">Orders</h3>
-      <table class="table-orders admin-tables-height table-responsive" style="font-size:18px; margin-left:-10%;">
+      <table class="table-orders admin-tables-height table-responsive" style="font-size:18px; margin-left:-12%;">
         <tr>
           <% @dashboard.order.statuses.each do |status| %>
-          <th> <%= status %></th>
+          <th> <%= status.capitalize %></th>
           <% end %>
         </tr>
         <tr>
