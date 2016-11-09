@@ -123,6 +123,12 @@ body {
   border: 1px solid black !important;
 }
 
+
+.pseudotron {
+  margin: 5rem;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid black !important;
+}
 /* custom admin table styling */
 
 .admin-tables {
@@ -142,7 +148,6 @@ body {
 }
 .admin-tables tr {
    width: 100%;
-   /*display: table;*/
    text-align: left;
 }
 .admin-tables th, .admin-tables td {
@@ -156,26 +161,18 @@ body {
    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.table-round {
-    border: none;
+.table-orders thead, .table-orders tbody {
+   float: left;
+   width: 100%;
 }
-.table-round thead th {
-    border: none;
-    text-shadow: 1px 1px 1px #ccc;
-    color: #333;
+
+.table-orders th, .table-orders td {
+  width: 80%;
+  padding: 5px;
 }
-.table-round thead th:first-child {
-    border-radius: 10px 0 0 0;
-}
-.table-round thead th:last-child {
-    border-radius: 0 10px 0 0;
-}
-.table-round tbody td {
-    border: none;
-}
-.table-round tbody tr:last-child td:first-child {
-    border-radius: 0 0 0 10px;
-}
-.table-round tbody tr:last-child td:last-child {
-    border-radius: 0 0 10px 0;
+
+.table-orders tr {
+   width: 100%;
+   /*display: table;*/
+   text-align: left;
 }
