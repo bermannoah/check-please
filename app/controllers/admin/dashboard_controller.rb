@@ -5,6 +5,7 @@ class Admin::DashboardController < ApplicationController
     @dashboard = Dashboard.new
     @dashboard.set_admin(session[:server_id])
     @dashboard.set_status(params[:order][:status]) if params[:order]
+    @dashboard.set_status_order
   end
 
 private
