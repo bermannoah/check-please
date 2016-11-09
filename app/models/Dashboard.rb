@@ -20,6 +20,11 @@ class Dashboard
   end
 
   def set_status_order
-    @status ?  @status_order = Order.where(status: @status) : @status_order = orders
+    if @status.nil? || @status == ''
+      @status_order = orders
+    else
+      @status_order = Order.where(status: @status)
+    end
   end
+  
 end
