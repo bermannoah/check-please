@@ -1,0 +1,23 @@
+<div class='col-md-4 col-md-offset-1 jumbotron'>
+  <h3 class='header'>Servers</h3>
+  <table class="admin-tables admin-tables-height">
+    <thead>
+      <tr><th>Server</th><th>Role</th></tr>
+    </thead>
+    <tbody>
+      <% @dashboard.servers.each do |server|%>
+      <tr id="server_<%= server.id %>">
+          <td><%= server.name %></td>
+          <td>
+            <%= form_for server, url: admin_server_path(server) do |f| %>
+              <%= f.collection_select :role, @dashboard.roles, :role, :role, {:id=>'server-dropdown'}  %>
+          </td>
+          <td>
+            <%= f.submit "Update", class: "btn btn-info" %>
+          </td>
+          <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
