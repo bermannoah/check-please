@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20161108173832) do
     t.integer  "server_id"
     t.float    "total"
     t.integer  "status",     default: 0
-    t.datetime "created_at", default: '2016-11-04 18:06:21', null: false
-    t.datetime "updated_at", default: '2016-11-04 18:06:21', null: false
+    t.datetime "created_at", default: '2016-11-09 17:46:26', null: false
+    t.datetime "updated_at", default: '2016-11-09 17:46:26', null: false
     t.index ["server_id"], name: "index_orders_on_server_id", using: :btree
   end
 

@@ -2,6 +2,19 @@
 <h5> Ordered by: <%= @order.server.name %></h5>
 <h5> Username: <%= @order.server.username %> </h5>
 
+<form action="/charges" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_3xzTluUGyKhLta6zmufkcCdd"
+    data-amount=""
+    data-name="Thanks for visiting!"
+    data-description="Come back soon!"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+
 <div class="orders-width center-block jumbotron">
 <table class="table-font table table-hover table-orders">
   <thead>
