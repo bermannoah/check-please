@@ -48,7 +48,6 @@
     <br>
     <br>
 
-
       <div class="order_partial">
         <%= form_tag(admin_dashboard_path, method: "get") do %>
           <%= collection_select :order, :status, @dashboard.unique_statuses, :status, :status, {:id=>'status-dropdown'} %>
@@ -65,7 +64,7 @@
         <tr><th>Name</th><th>Price</th><th>Category</th></tr>
         <% @dashboard.items.each do |item|%>
         <tr>
-            <td><%= item.name %></td>
+            <td><%= link_to item.name, edit_admin_item_path(item) %></td>
             <td><%= number_to_currency(item.price, :unit => "$") %></td>
             <td><%= item.category.name %></td>
         </tr>

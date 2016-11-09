@@ -2,8 +2,8 @@
 <h5> Ordered by: <%= @order.server.name %></h5>
 <h5> Username: <%= @order.server.username %> </h5>
 
-
-<table class="admin-tables jumbotron table-hover table-round">
+<div class="orders-width center-block jumbotron">
+<table class="table-font table table-hover table-orders">
   <thead>
     <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
   </thead>
@@ -17,12 +17,12 @@
     </tr>
     <% end %>
     <tr>
-      <td></td>
+      <td></td><td></td>
       <td>Total</td>
       <td><%= number_to_currency(@order.total, :unit => "$") %></td>
     </tr>
-    <tr>
-      <td></td>
+    <tr class="order-date">
+      <td></td><td></td>
       <td>Order Created At: </td>
       <td><%= @order.created_at %></td>
     </tr>
@@ -33,3 +33,5 @@
     <% end %>
   </tbody>
 </table>
+
+</div>
