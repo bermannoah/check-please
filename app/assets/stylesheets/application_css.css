@@ -85,6 +85,22 @@ body {
   margin-top: 7px;
 }
 
+.field {
+  padding: 1%;
+}
+
+.field-label {
+  margin-right: 5%;
+}
+
+.field-list {
+  padding-left: 13rem;
+}
+
+.field-list li {
+  display: inline-block;
+  padding-left: 5%;
+}
 
 /* this overrides bootstrap's navbar float css */
 @media (min-width: 768px) {
