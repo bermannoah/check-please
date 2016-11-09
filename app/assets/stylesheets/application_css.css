@@ -130,16 +130,35 @@ body {
 }
 
 .btn-small {
-  font-size: 9px !important;
+  font-size: 10px !important;
   width: 70px;
   height: 35px;
   white-space: normal !important;
   padding-bottom: 5% !important;
+  padding-right: 15px; !important;
 }
 
 .btn-padding {
   margin-bottom: 20px !important;
 }
+
+#order_status {
+  margin-bottom: 5%;
+  font-size: 18px;
+}
+
+.admin-edit li {
+  display: inline-block;
+  
+}
+
+.admin-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 5%;
+}
+
+
 /* custom admin table styling */
 
 .admin-tables {
@@ -188,11 +207,6 @@ body {
   width: 80%;
   padding: 5px;
   font-size: 16px;
-}
-
-#order_status {
-  margin-bottom: 5%;
-  font-size: 18px;
 }
 
 .table-orders thead, .table-orders tbody {

@@ -38,7 +38,7 @@ RSpec.feature "admin can change the order status of orders from the dashboard" d
 
   it "admin can change order status on orders that are ordered to paid" do
     within "#order_#{@order_1.id}" do
-      click_on "Mark Paid"
+      click_on "Paid"
     end
 
     within "#order_#{@order_1.id}" do
@@ -48,7 +48,7 @@ RSpec.feature "admin can change the order status of orders from the dashboard" d
 
   it "admin can change order status on orders that are paid to completed" do
     within "#order_#{@order_2.id}" do
-      click_on "Mark Completed"
+      click_on "Completed"
     end
 
     within "#order_#{@order_2.id}" do
