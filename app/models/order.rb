@@ -27,4 +27,8 @@ class Order < ApplicationRecord
   def status_count
     Order.group(:status).count
   end
+  
+  def total_in_cents
+    @total_in_cents = (self.total * 100).round
+  end
 end
