@@ -6,9 +6,9 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class='col-md-4'>
+    <div class='col-md-4 col-md-offset-1 jumbotron'>
       <h3 class='header'>Servers</h3>
-      <table class="admin-tables">
+      <table class="admin-tables admin-tables-height">
         <thead>
           <tr><th>Server</th><th>Role</th></tr>
         </thead>
@@ -26,14 +26,37 @@
               <% end %>
           </tr>
           <% end %>
-
         </tbody>
-      </table></br>
+      </table>
     </div>
 
-    <div class='col-md-4'>
+    <div class='col-md-4 col-md-offset-1 jumbotron'>
+      <h3 class="header">Items</h3>
+      <table class="admin-tables admin-tables-overflow table-responsive">
+        <tr><th>Name</th><th>Price</th><th>Category</th></tr>
+        <% @dashboard.items.each do |item|%>
+        <tr>
+            <td><%= link_to item.name, edit_admin_item_path(item) %></td>
+            <td><%= number_to_currency(item.price, :unit => "$") %></td>
+            <td><%= item.category.name %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class='col-md-4 col-md-offset-1 jumbotron table-responsive'>
+      <div class="order_partial admin-table-orders admin-div-overflow">
+        <%= form_tag(admin_dashboard_path, method: "get") do %>
+        <%= collection_select :order, :status, @dashboard.unique_statuses, :status, :status, {:id=>'status-dropdown'} %></br>
+        <%= submit_tag "Submit", class: "btn btn-info btn-padding" %>
+        <% end %>
+        <%= render partial: "order_list" %>
+      </div>
+    </div>
+
+    <div class='col-md-4 col-md-offset-1 jumbotron'>
       <h3 class="header">Orders</h3>
-      <table class="admin-tables">
+      <table class="table-orders admin-tables-height table-responsive" style="font-size:18px; margin-left:-10%;">
         <tr>
           <% @dashboard.order.statuses.each do |status| %>
           <th> <%= status %></th>
@@ -45,31 +68,7 @@
           <% end %>
         </tr>
       </table>
-    <br>
-    <br>
-
-      <div class="order_partial">
-        <%= form_tag(admin_dashboard_path, method: "get") do %>
-          <%= collection_select :order, :status, @dashboard.unique_statuses, :status, :status, {:id=>'status-dropdown'} %>
-          <%= submit_tag "Submit" %>
-        <% end %>
-        <%= render partial: "order_list" %>
-      </div>
-
     </div>
 
-    <div class='col-md-4'>
-      <h3 class="header">Items</h3>
-      <table class="admin-tables">
-        <tr><th>Name</th><th>Price</th><th>Category</th></tr>
-        <% @dashboard.items.each do |item|%>
-        <tr>
-            <td><%= link_to item.name, edit_admin_item_path(item) %></td>
-            <td><%= number_to_currency(item.price, :unit => "$") %></td>
-            <td><%= item.category.name %></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
   </div>
 </div>

@@ -123,11 +123,22 @@ body {
   border: 1px solid black !important;
 }
 
-
 .pseudotron {
   margin: 5rem;
   background: rgba(255, 255, 255, 0.7) !important;
   border: 1px solid black !important;
+}
+
+.btn-small {
+  font-size: 9px !important;
+  width: 70px;
+  height: 35px;
+  white-space: normal !important;
+  padding-bottom: 5% !important;
+}
+
+.btn-padding {
+  margin-bottom: 20px !important;
 }
 /* custom admin table styling */
 
@@ -142,10 +153,13 @@ body {
    float: left;
    width: 100%;
 }
-.admin-tables tbody {
-   overflow: auto;
-   height: 400px;
+.admin-tables-overflow tbody,
+.admin-div-overflow {
+   overflow-y: auto;
+   overflow-x: hidden !important;
+   height: 300px;
 }
+
 .admin-tables tr {
    width: 100%;
    text-align: left;
@@ -159,6 +173,26 @@ body {
    border-bottom: 1px dotted black;
    font-size: 24px;
    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.admin-tables-height tbody {
+  height: 255px !important;
+}
+
+.admin-table-orders {
+  margin-left: -10% !important;
+  margin-right: -10% !important;
+}
+
+.admin-table-orders th, .admin-table-orders td {
+  width: 80%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+#order_status {
+  margin-bottom: 5%;
+  font-size: 18px;
 }
 
 .table-orders thead, .table-orders tbody {
