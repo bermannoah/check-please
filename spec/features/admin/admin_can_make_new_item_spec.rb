@@ -21,7 +21,7 @@ RSpec.feature "admin can add new item" do
     click_button "Submit"
 
     expect(current_path).to eq(item_path(Item.last.id))
-    save_and_open_page
+
     expect(page).to have_content("Test Item")
     expect(page).to have_content("3.00")
   end

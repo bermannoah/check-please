@@ -2,50 +2,40 @@
 <h5> Ordered by: <%= @order.server.name %></h5>
 <h5> Username: <%= @order.server.username %> </h5>
 
-<form action="/charges" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_3xzTluUGyKhLta6zmufkcCdd"
-    data-amount="<%= @order.total_in_cents %>"
-    data-name="Thanks for visiting!"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto"
-    data-zip-code="true">
-  </script>
-  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
-  <% @order.update_attributes(status: "paid") %>
-</form>
+<% if @order.completed_or_cancelled? == false %>
+  <%= render partial: "payment_button" %>
+<% end %>
 
 <div class="orders-width center-block jumbotron">
-<table class="table-font table table-hover table-orders">
-  <thead>
-    <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
-  </thead>
-  <tbody>
-    <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
-    <tr>
-      <td><%= link_to item.name, item_path(item.id) %></td>
-      <td><%= number_to_currency(item.price, :unit =>"$")%></td>
-      <td><%= quantity %></td>
-      <td><%= number_to_currency(subtotal, :unit => "$") %></td>
-    </tr>
+  <table class="table-font table table-hover table-orders">
+    <thead>
+      <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
+    </thead>
+    <tbody>
+      <% @order.prep_for_show.each do |(item, quantity, subtotal)| %>
+      <tr>
+        <td><%= link_to item.name, item_path(item.id) %></td>
+        <td><%= number_to_currency(item.price, :unit =>"$")%></td>
+        <td><%= quantity %></td>
+        <td><%= number_to_currency(subtotal, :unit => "$") %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td></td><td></td>
+        <td>Total</td>
+        <td><%= number_to_currency(@order.total, :unit => "$") %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p>
+    <p>Order created at: <%= @order.created_at %></p>
+  </p>
+  
+  <p>
+    <% if @order.completed_or_cancelled? %>
+    <p>Order <%= @order.status %> at <%= @order.updated_at %></p>
     <% end %>
-    <tr>
-      <td></td><td></td>
-      <td>Total</td>
-      <td><%= number_to_currency(@order.total, :unit => "$") %></td>
-    </tr>
-    <tr class="order-date">
-      <td></td><td></td>
-      <td>Order Created At: </td>
-      <td><%= @order.created_at %></td>
-    </tr>
-    <% if @order.completed_or_cancelled?%>
-    <tr>
-        <td>Order was <%=@order.status=%> at <%=@order.updated_at%></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  </p>
 
 </div>

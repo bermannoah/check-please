@@ -1,0 +1,12 @@
+<form action="/charges" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_3xzTluUGyKhLta6zmufkcCdd"
+    data-amount="<%= @order.total_in_cents %>"
+    data-name="Thanks for visiting!"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+</form>
