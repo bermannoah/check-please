@@ -7,7 +7,7 @@
       <% @items.each do |item| %>
         <tr>
           <td><%= item.name %></td>
-          <td><%= item.price %></td>
+          <td><%= number_to_currency(item.price, :unit => "$") %></td>
           <% if item.avatar_file_name.nil? %>
             <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
           <% else %>
