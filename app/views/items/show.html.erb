@@ -4,16 +4,15 @@
   <table class="table table-hover table-bticketed table-condensed table-font">
     <tr> <th class="center-content">Name</th> <th class="center-content">Price</th><th></th><th></th></tr>
       <tr>
-        <td><%= @item.name %></td>
-        <td><%= @item.price %></td>
+          <td><%= @item.name %></td>
+          <td><%= number_to_currency(@item.price, :unit => "$") %></td>
+
         <% if @item.avatar_file_name.nil? %>
-        <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
+          <td><%= image_tag 'missing.png', class: "missing-image-resize"%></td>
         <% else %>
           <td><%= image_tag item.avatar.url(:square), class: "image-styles" %></td>
         <% end %>
-        <td><%= number_to_currency(@item.price, :unit => "$") %></td>
-        <td><%= image_tag @item.avatar.url(:square) %></td>
-
+                
         <% if @item.retired == "N" %>
           <td><%= button_to "Add to Ticket", create_ticket_path(item_id: @item.id), class: "btn btn-success" %></td>
         <% else %>

@@ -1,0 +1,13 @@
+<div class='col-md-4 col-md-offset-1 jumbotron'>
+  <h3 class="header">Items</h3>
+  <table class="admin-tables admin-tables-overflow table-responsive">
+    <tr><th>Name</th><th>Price</th><th>Category</th></tr>
+    <% @dashboard.items.each do |item|%>
+    <tr class="item_<%= item.id %>">
+        <td><%= link_to item.name, edit_admin_item_path(item) %></td>
+        <td><%= number_to_currency(item.price, :unit => "$") %></td>
+        <td><%= item.category.name %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

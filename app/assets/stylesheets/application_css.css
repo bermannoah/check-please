@@ -234,3 +234,9 @@ body {
    /*display: table;*/
    text-align: left;
 }
+
+.table-order-count {
+  font-size: 18px;
+  margin-left:-12%;
+  height: 24.4rem !important;
+}

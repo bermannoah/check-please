@@ -1,0 +1,15 @@
+<div class='col-md-4 col-md-offset-1 jumbotron'>
+  <h3 class="header">Orders</h3>
+  <table class="table-orders table-order-count table-responsive">
+    <tr>
+      <% @dashboard.order.statuses.each do |status| %>
+      <th> <%= status.capitalize %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% @dashboard.order.status_count.each do |status_id, count| %>
+      <td> <%= count %> </td>
+      <% end %>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,9 @@
+<div class='col-md-4 col-md-offset-1 jumbotron table-responsive'>
+  <div class="order_partial admin-table-orders admin-div-overflow">
+    <%= form_tag(admin_dashboard_path, method: "get") do %>
+    <%= collection_select :order, :status, @dashboard.unique_statuses, :status, :status, {include_blank: "all"}  %></br>
+    <%= submit_tag "Submit", class: "btn btn-info btn-padding" %>
+    <% end %>
+    <%= render partial: "order_list" %>
+  </div>
+</div>
